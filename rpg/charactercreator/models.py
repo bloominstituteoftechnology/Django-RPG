@@ -1,4 +1,5 @@
 from django.db import models
+from django.core import validators 
 
 class Character(models.Model):
     """Abstract base representation of RPG characters."""
@@ -49,3 +50,13 @@ class Necromancer(Mage):
     # Charged talismans can be used to raise the dead!
     # TODO - Game logic should balance by weakening pet
     talisman_charged = models.BooleanField(default=True)
+
+class ShapeShifter(Character):
+    allowed_shapes = (
+    (0,'Fighter'),
+    (1, 'Mage'),
+    (2, 'Cleric'),
+    (3, 'Thief'),
+    (4, 'Necromancer')
+    )
+    shape = models.IntegerField(default=0, validators=[validators.MaxValueValidator(4), validators.MinValueValidator(0)])
