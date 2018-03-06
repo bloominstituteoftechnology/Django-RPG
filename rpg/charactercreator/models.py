@@ -49,3 +49,13 @@ class Necromancer(Mage):
     # Charged talismans can be used to raise the dead!
     # TODO - Game logic should balance by weakening pet
     talisman_charged = models.BooleanField(default=True)
+
+class ShapeShifter(Character):
+    allowed_shapes = (
+    (0,'Fighter'),
+    (1, 'Mage'),
+    (2, 'Cleric'),
+    (3, 'Thief'),
+    (4, 'Necromancer')
+    )
+    shape = models.IntegerField(default=0)
