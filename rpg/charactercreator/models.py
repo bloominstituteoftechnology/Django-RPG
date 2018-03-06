@@ -49,3 +49,13 @@ class Necromancer(Mage):
     # Charged talismans can be used to raise the dead!
     # TODO - Game logic should balance by weakening pet
     talisman_charged = models.BooleanField(default=True)
+
+class Assassin(Fighter, Thief):
+    def __init__(self):
+        self.rage = 50
+        self.energy = 50
+
+class Paladin(Fighter, Cleric):
+    def __init__(self):
+        self.rage = 50
+        self.energy = 50
