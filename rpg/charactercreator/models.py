@@ -1,4 +1,5 @@
 from django.db import models
+from django.core import validators 
 
 class Character(models.Model):
     """Abstract base representation of RPG characters."""
@@ -58,4 +59,4 @@ class ShapeShifter(Character):
     (3, 'Thief'),
     (4, 'Necromancer')
     )
-    shape = models.IntegerField(default=0)
+    shape = models.IntegerField(default=0, validators=[validators.MaxValueValidator(4), validators.MinValueValidator(0)])
