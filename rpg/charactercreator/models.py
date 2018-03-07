@@ -1,9 +1,10 @@
 from django.db import models
+from armory.models import Item
 
 class Character(models.Model):
     """Abstract base representation of RPG characters."""
     character_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=30)
+    name = models.CharField("Character's name", max_length=30)
     level = models.IntegerField(default=0)
     exp = models.IntegerField(default=0)
     hp = models.IntegerField(default=10)
@@ -15,6 +16,7 @@ class Character(models.Model):
     rage = models.IntegerField(default=0)
     mana = models.IntegerField(default=0)
     energy = models.IntegerField(default=0)
+    inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
 
     class Meta:
         abstract = True
