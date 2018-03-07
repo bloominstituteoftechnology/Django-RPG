@@ -33,15 +33,18 @@ class Mage(Character):
     mana = models.IntegerField(default=100)
     energy = None
 
-
 class Cleric(Character):
     """Mystical healers who can use shields."""
     using_shield = models.BooleanField(default=False)
+    rage = None
     mana = models.IntegerField(default=100)
+    energy = None
 
 class Thief(Character):
     """Sneaky rogues good at stealth and ranged attacks."""
     is_sneaking = models.BooleanField(default=False)
+    rage = None
+    mana = None
     energy = models.IntegerField(default=100)
 
 class Necromancer(Mage):
