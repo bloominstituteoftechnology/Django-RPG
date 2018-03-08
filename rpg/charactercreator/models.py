@@ -55,9 +55,8 @@ class Necromancer(Mage):
     # TODO - Game logic should balance by weakening pet
     talisman_charged = models.BooleanField(default=True)
 
-class Beast(Fighter):
+class Beast(Character):
     """A wild beast that contains a vast amount of rage and strength"""
-    using_shield = None
     rage = models.IntegerField(default=300)
     strength = models.IntegerField(default=5)
     mana = None
