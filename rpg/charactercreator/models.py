@@ -12,34 +12,29 @@ class Character(models.Model):
     intelligence = models.IntegerField(default=1)
     dexterity = models.IntegerField(default=1)
     wisdom = models.IntegerField(default=1)
-    has_pet = models.BooleanField(default=False)
-    rage = models.IntegerField(default=0)
-    mana = models.IntegerField(default=0)
-    energy = models.IntegerField(default=0)
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
 
 class Fighter(Character):
     """Martial warrior class good at hitting things."""
     using_shield = models.BooleanField(default=False)
-    rage = 100
+    rage = models.IntegerField(default=100)
 
 class Mage(Character):
     """Arcane spellcasters with a familiar pet."""
-    has_pet = True
-    mana = 100
+    has_pet = models.BooleanField(default=True)
+    mana = models.IntegerField(default=100)
 
 class Cleric(Character):
     """Mystical healers who can use shields."""
     using_shield = models.BooleanField(default=False)
-    mana = 100
+    mana = models.IntegerField(default=100)
 
 class Thief(Character):
     """Sneaky rogues good at stealth and ranged attacks."""
     is_sneaking = models.BooleanField(default=False)
-    energy = 100
+    energy = models.IntegerField(default=100)
 
 class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
     # Charged talismans can be used to raise the dead!
     talisman_charged = models.BooleanField(default=True)
-    has_pet = False
