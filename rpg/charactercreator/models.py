@@ -2,7 +2,7 @@ from django.db import models
 from armory.models import Item
 
 class Character(models.Model):
-    """Abstract base representation of RPG characters."""
+    """Base representation of RPG characters."""
     character_id = models.AutoField(primary_key=True)
     name = models.CharField("Character's name", max_length=30)
     level = models.IntegerField(default=0)
@@ -18,39 +18,28 @@ class Character(models.Model):
     energy = models.IntegerField(default=0)
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
 
-    class Meta:
-        abstract = True
-
 class Fighter(Character):
     """Martial warrior class good at hitting things."""
     using_shield = models.BooleanField(default=False)
-    rage = models.IntegerField(default=100)
-    mana = None
-    energy = None
+    rage = 100
 
 class Mage(Character):
     """Arcane spellcasters with a familiar pet."""
-    has_pet = models.BooleanField(default=True)
-    rage = None
-    mana = models.IntegerField(default=100)
-    energy = None
+    has_pet = True
+    mana = 100
 
 class Cleric(Character):
     """Mystical healers who can use shields."""
     using_shield = models.BooleanField(default=False)
-    rage = None
-    mana = models.IntegerField(default=100)
-    energy = None
+    mana = 100
 
 class Thief(Character):
     """Sneaky rogues good at stealth and ranged attacks."""
     is_sneaking = models.BooleanField(default=False)
-    rage = None
-    mana = None
-    energy = models.IntegerField(default=100)
+    energy = 100
 
 class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
     # Charged talismans can be used to raise the dead!
-    # TODO - Game logic should balance by weakening pet
     talisman_charged = models.BooleanField(default=True)
+    has_pet = False
