@@ -1,0 +1,23 @@
+<h1>{{ character.name }}</h1>
+
+<p>ID: {{ character.character_id }}</p>
+
+<p>Level: {{ character.level }}</p>
+
+<p>Experience: {{ character.exp }}</p>
+
+<p>Health: {{ character.hp }}</p>
+
+<p>Strength: {{ character.strength }}</p>
+
+<p>Intelligence: {{ character.intelligence }}</p>
+
+<p>Dexterity: {{ character.dexterity }}</p>
+
+<p>Wisdom: {{ character.wisdom }}</p>
+
+<p>Has a Shield: {{ character.using_shield }}</p>
+
+<p>Rage: {{ character.rage }}</p>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
