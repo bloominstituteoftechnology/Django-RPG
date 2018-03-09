@@ -49,3 +49,13 @@ class Necromancer(Mage):
     # Charged talismans can be used to raise the dead!
     # TODO - Game logic should balance by weakening pet
     talisman_charged = models.BooleanField(default=True)
+
+
+class Runner(Thief):
+    """Good at getting away."""
+    # Fast!
+    # TODO - Game logic should balance by weakening pet
+    speed = models.IntegerField(default=100)
+    
+
+    
