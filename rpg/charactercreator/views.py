@@ -15,5 +15,18 @@ def view_all_characters(request):
 
 def view_character(request, character_id):
     character = Character.objects.get(pk=character_id)
-    context = {'character': character}
+    try:
+        charClass = character.fighter.__class__.__name__
+    except:
+        try:
+            charClass = character.mage.__class__.__name__
+        except:
+            try:
+                charClass = character.thief.__class__.__name__
+            except:
+                try:
+                    charClass = character.cleric.__class__.__name__
+                except:
+                    pass
+    context = {'character': character, 'charClass': charClass}
     return render(request, 'character/index.html', context)

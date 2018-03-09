@@ -1,22 +1,37 @@
-<h1>
-  {{ character.name }}</h1>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
+<html>
+<div class="container">
+  {% if character.fighter %}
+  <img src="{% static 'charactercreator/fighter.png'  %}" alt="fighter image" /> {% endif %}{% if character.mage %}
+  <img src="{% static 'charactercreator/mage.png'  %}" alt="mage image" /> {% endif %}{% if character.thief %}
+  <img src="{% static 'charactercreator/thief.png'  %}" alt="thief image" />{% endif %}{% if character.cleric %}
+  <img src="{% static 'charactercreator/cleric.png'  %}" alt="cleric image" /> {% endif %}
 
-<p>ID: {{ character.character_id }}</p>
 
-<p>Level: {{ character.level }}</p>
 
-<p>Experience: {{ character.exp }}</p>
+  <h1>
+    {{ character.name }}</h1>
 
-<p>Hit Points: {{ character.hp }}</p>
+  <p>Class: {{ charClass }}</p>
 
-<p>Strength: {{ character.strength }}</p>
+  <p>Level: {{ character.level }}</p>
 
-<p>Intelligence: {{ character.intelligence }}</p>
+  <p>Experience: {{ character.exp }}</p>
 
-<p>Dexterity: {{ character.dexterity }}</p>
+  <p>Hit Points: {{ character.hp }}</p>
 
-<p>Wisdom: {{ character.wisdom }}</p>
+  <p>Strength: {{ character.strength }}</p>
 
-<p>Shield: {{ character.using_shield }}</p>
+  <p>Intelligence: {{ character.intelligence }}</p>
 
-<p>Rage: {{ character.rage }}</p>
+  <p>Dexterity: {{ character.dexterity }}</p>
+
+  <p>Wisdom: {{ character.wisdom }}</p>
+
+  <p>Shield: {{ character.using_shield }}</p>
+
+  <p>Rage: {{ character.rage }}</p>
+</div>
+
+</html>
