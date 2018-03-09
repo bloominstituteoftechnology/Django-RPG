@@ -1,0 +1,17 @@
+{% if characters %}
+<ul>
+    {% for characters in characters %}
+    <li> <a href="/charactercreator/character/{{ characters.character_id }}/">
+        {{ characters.name }}</a>
+    </li>
+    <li>
+        Strength: {{ characters.strength }}
+    </li>
+    <li>
+        Object ID: {{ characters.strength }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No characters are available.</p>
+{% endif %}
