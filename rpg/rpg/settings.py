@@ -30,12 +30,20 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
+    # Django packages
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    # 3rd party packages
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    # Our apps
     'armory',
     'charactercreator',
 ]
@@ -119,3 +127,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SITE_ID = 1
