@@ -13,11 +13,13 @@ class Character(models.Model):
     dexterity = models.IntegerField(default=1)
     wisdom = models.IntegerField(default=1)
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
+  
 
 class Fighter(Character):
     """Martial warrior class good at hitting things."""
     using_shield = models.BooleanField(default=False)
     rage = models.IntegerField(default=100)
+
 
 class Mage(Character):
     """Arcane spellcasters with a familiar pet."""
@@ -36,5 +38,5 @@ class Thief(Character):
 
 class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
-    # Charged talismans can be used to raise the dead!
+    # Charged taliNecromancersmans can be used to raise the dead!
     talisman_charged = models.BooleanField(default=True)
