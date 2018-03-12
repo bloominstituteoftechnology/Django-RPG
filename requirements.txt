@@ -1,2 +1,2 @@
 django==2.0.2
-rest_social_auth==1.2.0
+rest-social-auth==1.2.0
