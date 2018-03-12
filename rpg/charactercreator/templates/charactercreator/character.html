@@ -1,0 +1,38 @@
+{%if character %}
+  {% load static %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/style.css' %}" />
+  <!--  <iframe src="{% static 'charactercreator/character.html' %}" seamless height="80%" width="100%" id="character_for_fighter"  ></iframe> -->
+  <form action="{% url 'show_characters:characters'  %}" method="GET">
+  <h1>{{ ct.name }}</h1>
+  <h2>Name: <strong>{{ character.name }}</strong></h2>    
+  <h2>Level: <strong>{{ character.level }}</strong></h2>        
+  <h2>Exp: <strong>{{ character.exp }}</strong></h2>    
+  <h2>Hp: <strong>{{ character.hp }}</strong></h2>    
+  <h2>Strength: <strong>{{ character.strength }}</strong></h2>    
+  <h2>Intelligence: <strong>{{ character.intelligence }}</strong></h2>    
+  <h2>Dexterity: <strong>{{ character.dexterity }}</strong></h2>   
+  <h2>Wisdom: <strong>{{ character.wisdom }}</strong></h2>    
+  <h2>Iventory:</h2>
+  <ul>
+      {% for item in character.inventory.all %}
+         <li>
+            <label> item id <h3>{{ item.item_id }}</h3> </label>
+            <label for="name">name: <h3>{{ item.name }}</h3></label>
+            {% if item.weapon %}
+                <label for="power">power: <h3>{{ item.weapon.power }}</h3></label>
+            {% endif %}
+            item: <h3>{{ item.value }}</h3>
+            weight: <h3>{{ item.weight }}</h3>
+
+        </li>
+      {% endfor %}
+  </ul>  
+  {% for field in ct.fields  %}
+    <label>{{field.t}} <h3>{{field.v}}</h3></label>
+  {% endfor %}
+  <br />
+  <br />
+  <input type="submit" value="Back" />
+</form>  
+{% endif %}
