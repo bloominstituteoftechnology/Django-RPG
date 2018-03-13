@@ -1,4 +1,6 @@
 <h1>{{ character.name }}</h1>
+<h2>{{ charClass }}</h2>
+<h2>{{ character.class_name }}</h2>
 
 <p>ID: {{ character.character_id }}</p>
 
@@ -20,4 +22,7 @@
 
 <p>Rage: {{ character.rage }}</p>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% if error_message %}
+<p>
+  <strong>{{ error_message }}</strong>
+</p>{% endif %}
