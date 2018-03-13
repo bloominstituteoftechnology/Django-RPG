@@ -107,5 +107,5 @@ https://virtualenvwrapper.readthedocs.io/en/latest/
 
 * Not just referring to software development but development in general. It is simply a well defined specification for its behavior and for what it exposes. This well defined specification allows software to be built on top of it in a predictable manner. We are building on top of the layers of api over the course of decades. Important to note that it is commomly used to refer to a back end server  that receives, stores, and manipulates data over the network. Api can be public or private, paid or free.
 
-11. REST
+# REST
 * Representational Safe Transfer - web servies providing interoperability or RESTful web services. Its concerned with different HTTP methods and requests made to the server including Create, read, update, and delete operations. The HTTP methods includes GET, PUT (replace), PATCH(update), POST(create), DELETE and is applied to some entity like a database, request data, etc. REST is also stateless which means the request doesn't depend on other context but the request itself. Get request also nullipotent or a safe method which means calling it twice produces no side effects.
