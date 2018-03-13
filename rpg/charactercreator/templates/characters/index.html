@@ -1,9 +1,16 @@
 {% if characters %}
+<h1>Available Characters</h1>
 <ul>
-    {% for character in characters %}
-    <li><a href="/charactercreator/character/{{ character.character_id }}/">{{ character.name }}</a></li>
-    {% endfor %}
+  {% for character in characters %}
+  <li>
+    <a href="/charactercreator/character/{{ character.character_id }}/">{{ character.name }}</a>
+  </li>
+  {% endfor %}
 </ul>
 {% else %}
 <p>No characters are available.</p>
 {% endif %}
+
+<form>
+  <input type="button" value="Logout" onclick="window.location.href='http://127.0.0.1:8000/accounts/logout/'" />
+</form>

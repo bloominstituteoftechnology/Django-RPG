@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
+    # 3rd party apps
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'rest_framework',
+    # My apps
     'armory',
     'charactercreator',
 ]
@@ -126,6 +130,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-SITE_ID = 2
+# site for allauth
+SITE_ID = 3
 
-LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/charactercreator/characters/"
+# redirect after authenticating
+LOGIN_REDIRECT_URL = "/charactercreator/characters/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
+
+# not required, remove for debugging
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

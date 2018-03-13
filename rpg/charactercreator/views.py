@@ -4,6 +4,7 @@ from django.shortcuts import render
 from .models import Character, Fighter, Mage, Cleric, Thief
 
 
+@login_required
 def index(request):
     return HttpResponse("Character Creator App!")
 
@@ -15,6 +16,7 @@ def view_all_characters(request):
     return render(request, 'characters/index.html', context)
 
 
+@login_required
 def view_character(request, character_id):
     character = Character.objects.get(pk=character_id)
     try:
