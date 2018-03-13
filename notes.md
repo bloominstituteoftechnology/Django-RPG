@@ -3,10 +3,10 @@
 1. Install python latest version globally using homebrew - homebrew install python
     a. python --version - checks python version
 
-2. install virutalenvwrapper using the following link with the provided instruction
+2. install virutalenvwrapper to set up an environment for django using the following link with the provided instruction
 https://virtualenvwrapper.readthedocs.io/en/latest/
 
-3. setting up a new app:
+# Setting up environment for new app and the server
 
 'pip install -r requirements.txt' - installs the dependences off of the requirement.txt file. Important for installing any needed dependencies. Similar to npm install to install required dependencies
 
@@ -28,7 +28,7 @@ https://virtualenvwrapper.readthedocs.io/en/latest/
 
 'https://docs.djangoproject.com/en/2.0/intro/tutorial01/' - example of a python app 
 
-4. App Set up: part 2
+# App Set up: part 2
 
 '$ python manage.py startapp polls' - starts a new app called polls. Make sure to use this command when manage.py is there in the terminal location
 
@@ -42,7 +42,7 @@ https://virtualenvwrapper.readthedocs.io/en/latest/
 
 * __init__.py - these files are to usually be kept empty as they auto generate. double underline indicates that they are system files
 
-5. Databases in Python
+#. Databases in Python
 
 * models.py - operates similarly to how models operate in mongoose where the model represents the structure for all data coming into the database
 
@@ -54,45 +54,32 @@ https://virtualenvwrapper.readthedocs.io/en/latest/
 
 './manage.py migrate' - migrate takes all migrations that haven't been applied using a special table in your database called django_migrations and runs them against your database. It basically synchronize changes made in model with the schema in the database. At this point you are making a commit to the migrations made
 
-6. Using Python Shell for databases
+# Using Python Shell for databases
 
 './manage.py shell' - starts up the python shell and test Django api. 
 
-from polls.models import Question, Choice   # Import the model classes we just wrote.
+'from polls.models import Question, Choice' - Imports the model classes we just wrote
 
-# No questions are in the system yet.
->>> Question.objects.all()
+'Question.objects.all()' - returns all objects, instances of the type 'Question'
 <QuerySet []>
 
-# Create a new Question.
-# Support for time zones is enabled in the default settings file, so
-# Django expects a datetime with tzinfo for pub_date. Use timezone.now()
-# instead of datetime.datetime.now() and it will do the right thing.
->>> from django.utils import timezone
->>> q = Question(question_text="What's new?", pub_date=timezone.now())
+'from django.utils import timezone' - imports the provided timezone from django itself
 
-# Save the object into the database. You have to call save() explicitly.
->>> q.save()
+'q = Question(question_text="What's new?", pub_date=timezone.now())' - Create a new Question. Support for time zones is enabled in the default settings file, so Django expects a datetime with tzinfo for pub_date. Use timezone.now() instead of datetime.datetime.now() and it will do the right thing.
 
-# Now it has an ID.
->>> q.id
-1
+'q.save()' - Save the object into the database. You have to call save() explicitly.
 
-# Access model field values via Python attributes.
->>> q.question_text
-"What's new?"
->>> q.pub_date
-datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
+'q.id' - # Now it has an ID. In this case, it will return 1.
 
-# Change values by changing the attributes, then calling save().
->>> q.question_text = "What's up?"
->>> q.save()
+'q.question_text' - Access model field values via Python attributes. Will return "What's new?" in this case
 
-# objects.all() displays all the questions in the database.
->>> Question.objects.all()
-<QuerySet [<Question: Question object (1)>]>
+'q.question_text = "What's up?"' - Change values by changing the attributes, then calling save().
+'q.save()' 
 
-7. Creating a Admin User
+'Question.objects.all()' - objects.all() displays all the questions in the database.
+
+
+# Creating a Admin User
 
 * Run these commands on a terminal
 
@@ -102,7 +89,7 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 
 'Email address: youemailhere@example.com' - optional; Note you will also be asked to enter a password as well (use admin for now). Admin website can always be found on the server localhost/admin
 
-8. Python Authentication
+# Python Authentication
 
 * admin users - has built in authentication, has access permissions wth access to pretty much anything
 
@@ -112,11 +99,13 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 
 'user = User.objects.create_user('john','lennon@thebeatles.com', 'johnpassword')' creates a user that can login. It is not a admin user. You do not have to call user.save() as it will save automaticcaly. You do need a user.save() if you to change the data
 
-9. Other Debugging Stuff 
+# Other Debugging Stuff 
 
 * delete db.sqlite3 if database is not synced with models and 'makemigrations' + 'migrate' command does not work. After deleting run 'makemigrations' + 'migrate' again.
 
-10. Api - Not just referring to software development but development in general. It is simply a 
-well defined specification for its behavior and for what it exposes. This well defined specification allows software to be built on top of it in a predictable manner. We are building on top of the layers of api over the course of decades. Important to note that it is commomly used to refer to a back end server  that receives, stores, and manipulates data over the network. Api can be public or private, paid or free.
+# Api 
 
-11. REST - Representational Safe Transfer - web servies providing interoperability or RESTful web services. Its concerned with different HTTP methods and requests made to the server including Create, read, update, and delete operations. The HTTP methods includes GET, PUT (replace), PATCH(update), POST(create), DELETE and is applied to some entity like a database, request data, etc. REST is also stateless which means the request doesn't depend on other context but the request itself. Get request also nullipotent or a safe method which means calling it twice produces no side effects.
+* Not just referring to software development but development in general. It is simply a well defined specification for its behavior and for what it exposes. This well defined specification allows software to be built on top of it in a predictable manner. We are building on top of the layers of api over the course of decades. Important to note that it is commomly used to refer to a back end server  that receives, stores, and manipulates data over the network. Api can be public or private, paid or free.
+
+11. REST
+* Representational Safe Transfer - web servies providing interoperability or RESTful web services. Its concerned with different HTTP methods and requests made to the server including Create, read, update, and delete operations. The HTTP methods includes GET, PUT (replace), PATCH(update), POST(create), DELETE and is applied to some entity like a database, request data, etc. REST is also stateless which means the request doesn't depend on other context but the request itself. Get request also nullipotent or a safe method which means calling it twice produces no side effects.
