@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.urls import include, path, re_path
 from rest_framework import routers, serializers, viewsets
+from charactercreator.api import CharacterViewSet
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -32,6 +33,7 @@ class UserViewSet(viewsets.ModelViewSet):
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'characters', CharacterViewSet)
 
 urlpatterns = [
     path('charactercreator/', include('charactercreator.urls')),
