@@ -102,5 +102,5 @@ ENV/
 
 # DB 
 .sqlite3
-rpg/db.sqlite3
+/rpg/db.sqlite3
 db.sqlite3
