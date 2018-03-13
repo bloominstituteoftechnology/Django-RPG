@@ -39,9 +39,9 @@ def view_character(request, character_id):
                             charClass = character.zombie.__class__.__name__
                         except:
                             pass
-    return render(request, 'characters/detail.html', {'character': character, 'charClass': charClass})
+    return render(request, 'character/index.html', {'character': character, 'charClass': charClass})
 
 
-@register.filter
-def to_class_name(value):
-    return value.__class__.__name__
+# @register.filter
+# def to_class_name(value):
+#     return value.__class__.__name__

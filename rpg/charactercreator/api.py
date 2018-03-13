@@ -7,11 +7,12 @@ from .models import Character, Fighter, Mage, Cleric, Thief, Necromancer, Zombie
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Character
-        fields = ('name', 'level')
-
+        fields = ('name', 'level', 'hp', 'character_id', 'exp', 'strength', 'intelligence', 'dexterity', 'wisdom')
 # ViewSets define the view behavior.
 
 
 class CharacterViewSet(viewsets.ModelViewSet):
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
+
+    

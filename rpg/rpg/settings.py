@@ -95,6 +95,8 @@ REST_FRAMEWORK = {
 
 WSGI_APPLICATION = 'rpg.wsgi.application'
 
+LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/charactercreator/characters/"
+
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -145,4 +147,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-SITE_ID = 1
+SITE_ID = 2
