@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 #database
-*.sqlite3
+rpg/db.sqlite3
