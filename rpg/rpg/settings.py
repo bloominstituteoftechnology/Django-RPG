@@ -8,6 +8,10 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
+
+In writing - GraphQL today, try to extend the schema and see if you can perform more
+flexible/powerful queries. I'll have the video up ASAP,
+and will check in throughout and plan on a Q&A around 3.
 """
 
 import os
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'graphene_django',
     'rest_framework',
     # Our apps
     'armory',
@@ -92,6 +97,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+GRAPHENE = {
+    'SCHEMA': 'charactercreator.schema.schema'
+}
+
 
 WSGI_APPLICATION = 'rpg.wsgi.application'
 
