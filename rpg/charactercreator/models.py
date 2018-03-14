@@ -1,5 +1,6 @@
 from django.db import models
-from armory.models import Item
+from armory.models import Item, Weapon
+
 
 class Character(models.Model):
     """Base representation of RPG characters."""
