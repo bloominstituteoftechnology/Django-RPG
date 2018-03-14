@@ -28,9 +28,9 @@ https://virtualenvwrapper.readthedocs.io/en/latest/
 
 'https://docs.djangoproject.com/en/2.0/intro/tutorial01/' - example of a python app 
 
-# App Set up: part 2
+# App Set Up: part 2
 
-'$ python manage.py startapp polls' - starts a new app called polls. Make sure to use this command when manage.py is there in the terminal location
+'./manage.py startapp polls' - starts a new app called polls. Make sure to use this command when manage.py is there in the terminal location
 
 * The include() function allows referencing other URLconfs. Whenever Django encounters include(), it chops off whatever part of the URL matched up to that point and sends the remaining string to the included URLconf for further processing. The idea behind include() is to make it easy to plug-and-play URLs. Since polls are in their own URLconf (polls/urls.py), they can be placed under “/polls/”, or under “/fun_polls/”, or under “/content/polls/”, or any other path root, and the app will still work.
 
@@ -97,7 +97,43 @@ https://virtualenvwrapper.readthedocs.io/en/latest/
 
 '@login_required' checks if user is logged in before taking user to a view. If yes, user is directed to view. If not, user is redirected to the login page which has a default url which can be changed using a redirect_field_name
 
-'user = User.objects.create_user('john','lennon@thebeatles.com', 'johnpassword')' creates a user that can login. It is not a admin user. You do not have to call user.save() as it will save automaticcaly. You do need a user.save() if you to change the data
+'user = User.objects.create_user('john','lennon@thebeatles.com', 'johnpassword')'- This is done in the python shell and it basically creates a user that can login. It is not a admin user. You do not have to call user.save() as it will save automaticcaly. You do need a user.save() if you to change the data
+
+#OAuth
+
+'django-allauth==0.35.0' - add oauthentication to the app using django allauth. Add this to the requirement.txt followed by a terminal command 'pip install -r requirements.txt'. 
+
+'pip install django-allauth' - install all auth directly using pip
+
+* After installing new frameworks, always go to the setting.py file in your app and add the new framework to the list of installed apps. 
+INSTALLED_APPS = [
+    'charactercreator',
+    'armory',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # sites important for auth and deployment
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github'
+]
+
+* Getting All Auth working
+    1. http://django-allauth.readthedocs.io/en/latest/installation.html#django - Gives more instruction for all auth installation
+
+    2. Afterward, login to admin, go to sites and change domain name 'example.com' into the domain name which you can find by looking at your url. By default, it is either localhost or in most case 4 numbers separated by a period with most common being '127.0.0.1'. Set this as both the domain name and display name
+
+    3. Go to your oauth provider and follow its instructions e.g https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/ for Github
+
+    4. Add the secret keys given by the Provider into your social account tab in the admin web page. 
+
+'127.0.0.1' - default domain name 
 
 # Other Debugging Stuff 
 
@@ -109,3 +145,9 @@ https://virtualenvwrapper.readthedocs.io/en/latest/
 
 # REST
 * Representational Safe Transfer - web servies providing interoperability or RESTful web services. Its concerned with different HTTP methods and requests made to the server including Create, read, update, and delete operations. The HTTP methods includes GET, PUT (replace), PATCH(update), POST(create), DELETE and is applied to some entity like a database, request data, etc. REST is also stateless which means the request doesn't depend on other context but the request itself. Get request also nullipotent or a safe method which means calling it twice produces no side effects.
+
+* http://www.django-rest-framework.org/tutorial/quickstart/ - Provides good sample code to follow when setting up RESTful application with Django. Note that it uses django rest framework which can either be install through pip or adding it into requirements.txt.
+
+'pip install djangorestframework' - install RESTful framework for Django directly through pip
+
+'djangorestframework==3.7.7' - add this line to requirements.txt and then call 'pip install -r requirements.txt' with the environment active in terminal ('. env/bin/activate' activates environment')
