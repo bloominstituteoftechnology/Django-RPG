@@ -4,6 +4,8 @@ from charactercreator.models import Character, Fighter, Mage, Cleric, Thief, Nec
 
 
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
+    inventory = serializers.SlugRelatedField(
+        many=True, read_only=True, slug_field='name')
 
     class Meta:
         model = Character

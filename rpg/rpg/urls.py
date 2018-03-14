@@ -19,6 +19,7 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from charactercreator.api import CharacterViewSet
 from armory.api import ItemViewSet
+from graphene_django.views import GraphQLView
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -44,4 +45,5 @@ urlpatterns = [
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
     re_path(r'^api-auth/', include('rest_framework.urls')),
+    re_path(r'^graphql/', GraphQLView.as_view(graphiql=True)),
 ]
