@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
+<html>
+<div class="container">
+  {% if character.fighter %}
+  <img src="{% static 'charactercreator/fighter.png'  %}" alt="fighter image" /> {% endif %}{% if character.mage %}
+  <img src="{% static 'charactercreator/mage.png'  %}" alt="mage image" /> {% endif %}{% if character.thief %}
+  <img src="{% static 'charactercreator/thief.png'  %}" alt="thief image" />{% endif %}{% if character.cleric %}
+  <img src="{% static 'charactercreator/cleric.png'  %}" alt="cleric image" /> {% endif %}
+
+
+
+  <h1>
+    {{ character.name }}</h1>
+
+  <p>Class: {{ charClass }}</p>
+
+  <p>Level: {{ character.level }}</p>
+
+  <p>Experience: {{ character.exp }}</p>
+
+  <p>Hit Points: {{ character.hp }}</p>
+
+  <p>Strength: {{ character.strength }}</p>
+
+  <p>Intelligence: {{ character.intelligence }}</p>
+
+  <p>Dexterity: {{ character.dexterity }}</p>
+
+  <p>Wisdom: {{ character.wisdom }}</p>
+
+  <p>Shield: {{ character.using_shield }}</p>
+
+  <p>Rage: {{ character.rage }}</p>
+</div>
+<form>
+  <input type="button" value="Logout" onclick="window.location.href='http://127.0.0.1:8000/accounts/logout/'" />
+</form>
+
+</html>

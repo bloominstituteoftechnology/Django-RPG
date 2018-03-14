@@ -1,0 +1,31 @@
+body {
+  background-image: url("paper.gif");
+  background-color: #cccccc;
+}
+
+h1 {
+  color: black;
+  text-shadow: 3px 2px grey;
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+
+div.container {
+  width: 96%;
+  max-width: 960px;
+  margin: 0 auto; /* to center the container */
+}
+
+img {
+  display: inline-block;
+  max-height: 60%;
+  width:50%;
+  position:relative;
+  background:url() 50% 50% no-repeat;
+  background-size:cover;
+  background-clip:content-box;
+  float: right;
+}
