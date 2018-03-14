@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'graphene_django',
     'rest_framework',
     # Our apps
     'armory',
@@ -92,6 +93,11 @@ REST_FRAMEWORK = {
     ]
 }
 
+GRAPHENE = {
+    # 'SCHEMA': 'rpg.schema.schema'
+    'SCHEMA': 'charactercreator.schema.schema'
+}
+
 WSGI_APPLICATION = 'rpg.wsgi.application'
 
 
@@ -115,7 +121,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

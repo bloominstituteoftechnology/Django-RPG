@@ -18,6 +18,7 @@ from django.contrib.auth.models import User
 from django.urls import include, path, re_path
 from rest_framework import routers, serializers, viewsets
 from charactercreator.api import CharacterViewSet
+from graphene_django.views import GraphQLView
 
 # Serializers define the API representation.
 
@@ -46,4 +47,5 @@ urlpatterns = [
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
     re_path(r'^api-auth/', include('rest_framework.urls')),
+    re_path(r'^graphql/', GraphQLView.as_view(graphiql=True)),
 ]
