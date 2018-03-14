@@ -1,0 +1,16 @@
+label {
+    display: inline;
+}
+h3 {
+    display: inline;
+}
+input {
+    display: block;
+}
+.weapon {
+    display: inline;
+    color: blue;
+}
+#item_id {
+    background-color: red;
+}
