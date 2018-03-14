@@ -6,5 +6,9 @@ class Item(models.Model):
     value = models.IntegerField(default=0)
     weight = models.IntegerField(default=0)
 
+    @property
+    def is_weapon(self):
+        return hasattr(self, 'power')
+
 class Weapon(Item):
     power = models.IntegerField(default=0)

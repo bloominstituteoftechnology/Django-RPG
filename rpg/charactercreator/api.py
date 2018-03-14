@@ -5,7 +5,7 @@ from .models import Character, Fighter, Mage, Cleric, Thief, Necromancer
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Character
-        fields = ('name', 'level')
+        fields = ('name', 'level', 'inventory')
 
 # ViewSets define the view behavior.
 class CharacterViewSet(viewsets.ModelViewSet):
