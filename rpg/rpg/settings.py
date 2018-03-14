@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.facebook',
+    'graphene_django',
     'rest_framework',
     # Our apps
     'armory',
@@ -91,6 +92,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
+}
+
+GRAPHENE = {
+    'SCHEMA': 'charactercreator.schema.schema'
 }
 
 WSGI_APPLICATION = 'rpg.wsgi.application'
