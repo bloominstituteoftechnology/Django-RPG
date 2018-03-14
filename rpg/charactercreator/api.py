@@ -4,7 +4,7 @@ from armory.models import Item, Weapon
 from armory.api import ItemSerializer
 # Serializers define the API representation.
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
-    inventory = ItemSerializer(many=True,    read_only=True )
+    inventory = ItemSerializer(many=True,    read_only=False )
     class Meta:
         model = Character
         fields = ('character_id','name', 'level', 'exp', 'hp', 'strength', 'intelligence',
