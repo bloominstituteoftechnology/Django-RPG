@@ -1,1 +1,1 @@
-web: gunicorn rpg.wsgi --log-file -
+web: gunicorn rpg/wsgi.py --log-file -
