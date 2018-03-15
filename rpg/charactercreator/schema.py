@@ -1,7 +1,7 @@
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 import graphene
-from charactercreator.models import Character as CharacterModel
+from .models import Character as CharacterModel
 
 class CharacterNode(DjangoObjectType):
     class Meta:
