@@ -4,6 +4,7 @@ django-filter==2.0.0.dev1
 djangorestframework==3.7.7
 dj-database-url==0.5.0
 graphene-django>=2.0.dev
+gunicorn==19.7.1
 psycopg2==2.7.4
 python-decouple==3.1
 whitenoise==3.3.1
