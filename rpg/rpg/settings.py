@@ -36,15 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-<<<<<<< HEAD
-    'django.contrib.sites',    
-    'django.contrib.staticfiles',
-    'allauth',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
-    
-    
-=======
     'django.contrib.sites',
     'django.contrib.staticfiles',
     # 3rd party packages
@@ -53,7 +44,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     # Our apps
->>>>>>> 13039317107759a9dd72e257da95f513b433f6fd
     'armory',
     'charactercreator',
 ]
@@ -144,8 +134,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
-=======
-
->>>>>>> 13039317107759a9dd72e257da95f513b433f6fd
 SITE_ID = 1
