@@ -96,7 +96,7 @@ REST_FRAMEWORK = {
 }
 
 GRAPHENE = {
-    'SCHEMA': 'rpg.charactercreator.schema'
+    'SCHEMA': 'rpg.schema.schema'
 }
 
 WSGI_APPLICATION = 'rpg.wsgi.application'
