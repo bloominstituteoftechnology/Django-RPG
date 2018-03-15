@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-#from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
-
-=======
-from django.contrib.auth.decorators import login_required
->>>>>>> 13039317107759a9dd72e257da95f513b433f6fd
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Character, Fighter, Mage, Cleric, Thief
