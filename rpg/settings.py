@@ -15,7 +15,7 @@ from decouple import config
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     # Our apps
-    'rpg.armory',
-    'rpg.charactercreator',
+    'armory',
+    'charactercreator',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'rpg.urls'
 
 TEMPLATES = [
     {
