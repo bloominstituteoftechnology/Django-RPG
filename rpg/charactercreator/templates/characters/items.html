@@ -1,0 +1,9 @@
+{% if items %}
+<ul>
+    {% for item in items %}
+    <li><a href="/charactercreator/character/4/item/{{ item.item_id }}">{{ item.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No items are available.</p>
+{% endif %}
