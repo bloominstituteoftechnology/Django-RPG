@@ -15,6 +15,9 @@ and will check in throughout and plan on a Q&A around 3.
 """
 
 import os
+import dj_database_url
+from decouple import config
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +26,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sn_#zt!4p&gnj+@l_r#pwq^b)h@fv2%8@-$a=kbki1so=d7_ma'
+# SECRET_KEY = 'sn_#zt!4p&gnj+@l_r#pwq^b)h@fv2%8@-$a=kbki1so=d7_ma'
 
+DEBUG = config('DEBUG', default=False, cast=bool)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -104,8 +109,20 @@ GRAPHENE = {
 
 
 WSGI_APPLICATION = 'rpg.wsgi.application'
+connection_string = config('DATABASE')
+default_parameters = dj_database_url.parse(connection_string, conn_max_age=600)
 
-
+DATABASES  = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': default_parameters['NAME'],
+        'USER': default_parameters['USER'],
+        'PASSWORD': default_parameters['PASSWORD'],
+        'HOST': default_parameters['HOST'],
+        'PORT': default_parameters['PORT'],
+    }
+   
+}
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
@@ -115,16 +132,16 @@ WSGI_APPLICATION = 'rpg.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tspmqnqd',
-        'USER': 'tspmqnqd',
-        'PASSWORD': 'DUpHB8qa0PEAxnqXFBsLklj7FtSF8QaJ',
-        'HOST': 'baasu.db.elephantsql.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'tspmqnqd',
+#         'USER': 'tspmqnqd',
+#         'PASSWORD': 'DUpHB8qa0PEAxnqXFBsLklj7FtSF8QaJ',
+#         'HOST': 'baasu.db.elephantsql.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
