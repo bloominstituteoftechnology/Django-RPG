@@ -8,3 +8,7 @@ class Item(models.Model):
 
 class Weapon(Item):
     power = models.IntegerField(default=0)
+
+class Potion(Item):
+    hp_potion = models.IntegerField(default=10)
+    strength_potion = models.IntegerField(default=10)
