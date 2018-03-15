@@ -1,10 +1,10 @@
 import graphene
-import charactercreator.schema
-import armory.schema
+import rpg.charactercreator.schema
+import rpg.armory.schema
 
 # from graphene_django.debug import DjangoDebug
 
-class Query(armory.schema.Query, charactercreator.schema.Query, graphene.ObjectType):
+class Query(rpg.armory.schema.Query, rpg.charactercreator.schema.Query, graphene.ObjectType):
     # debug = graphene.Field(DjangoDebug, name='__debug')
     pass
 
