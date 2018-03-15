@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import Item
+from rpg.Item.models import Item
 
 # Serializers define the API representation.
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
