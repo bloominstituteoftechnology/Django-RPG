@@ -1,5 +1,5 @@
 import graphene
-import charactercreator.schema
+import rpg.charactercreator.schema
 
 class Query(charactercreator.schema.Query, graphene.ObjectType):
     pass
