@@ -1,1 +1,1 @@
-web: python rpg/manage.py runserver 0.0.0.0:$PORT
+web: python rpg/manage.py runserver ts-django-rpg.herokuapp.com:$PORT
