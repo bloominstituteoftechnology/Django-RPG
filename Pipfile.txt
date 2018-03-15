@@ -1,0 +1,19 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+
+[packages]
+
+django = "==2.0.2"
+django-allauth = "==0.35.0"
+djangorestframework = "==3.7.7"
+graphene-django = ">=2.0.dev"
+gunicorn = "*"
+django-heroku = "*"
+"psycopg2" = "*"
+
+[requires]
+
+python_version = "3.6"

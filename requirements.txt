@@ -2,3 +2,9 @@ django==2.0.2
 django-allauth==0.35.0
 djangorestframework==3.7.7
 mysqlclient
+graphene-django>=2.0.dev
+gunicorn
+django-heroku
+psycopg2
+pylint
+autopep8
