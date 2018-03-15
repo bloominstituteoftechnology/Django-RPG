@@ -136,7 +136,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # site for allauth
-SITE_ID = 3
+SITE_ID = 1
 
 # redirect after authenticating
 LOGIN_REDIRECT_URL = "/charactercreator/characters/"
@@ -159,7 +159,7 @@ REST_FRAMEWORK = {
 }
 
 GRAPHENE = {
-    'SCHEMA': 'charactercreator.schema.schema',
+    'SCHEMA': 'rpg.charactercreator.schema.schema',
 }
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
