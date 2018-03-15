@@ -38,3 +38,13 @@ class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
     # Charged talismans can be used to raise the dead!
     talisman_charged = models.BooleanField(default=True)
+
+
+class Runner(Thief):
+    """Good at getting away."""
+    # Fast!
+    # TODO - Game logic should balance by weakening pet
+    speed = models.IntegerField(default=100)
+    
+
+    
