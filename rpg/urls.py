@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.urls import include, path, re_path
 from rest_framework import routers, serializers, viewsets
-from rpg.charactercreator.api import CharacterViewSet
+from rpg.charactercreator.api import CharacterViewSet, FighterViewSet
 from graphene_django.views import GraphQLView
 
 # Serializers define the API representation.
@@ -35,6 +35,7 @@ class UserViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'characters', CharacterViewSet)
+router.register(r'fighters', FighterViewSet)
 
 urlpatterns = [
     path('charactercreator/', include('rpg.charactercreator.urls')),
