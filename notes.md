@@ -151,3 +151,10 @@ INSTALLED_APPS = [
 'pip install djangorestframework' - install RESTful framework for Django directly through pip
 
 'djangorestframework==3.7.7' - add this line to requirements.txt and then call 'pip install -r requirements.txt' with the environment active in terminal ('. env/bin/activate' activates environment')
+
+# GraphQL 
+
+* GraphQL is a query language for your api and a way to think querying data using a single api input. There is a single endpoint is queried and relatively simple using json. It works relatively well with the React ecosystem.
+
+# environment variables 
+* variable typically as PATH which are varaibles exposed to your OS. Usually used for either creating new environment, keeping secrets safe, deploying websites.
