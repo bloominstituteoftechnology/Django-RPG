@@ -13,14 +13,9 @@ class Character(models.Model):
     intelligence = models.IntegerField(default=1)
     dexterity = models.IntegerField(default=1)
     wisdom = models.IntegerField(default=1)
-<<<<<<< HEAD
-    inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
-  
-=======
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has", related_name="items"  )
     def __unicode__(self):
         return self.name    
->>>>>>> my_api
 
 class Fighter(Character):
     """Martial warrior class good at hitting things."""

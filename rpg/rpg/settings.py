@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'django_extensions',    
-<<<<<<< HEAD
-=======
     # 3rd party packages
     'allauth',
     'allauth.account',
@@ -53,7 +51,6 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     # Our apps
->>>>>>> my_api
     'armory',
     'charactercreator',
 ]
