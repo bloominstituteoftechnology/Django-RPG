@@ -1,13 +1,22 @@
 from rest_framework import serializers, viewsets
-from .models import Character, Fighter, Mage, Cleric, Thief, Necromancer
+from .models import Character, Fighter
 
-# Serializers define the API representation.
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Character
-        fields = ('name', 'level', 'exp', 'hp', 'strength', 'intelligence', 'dexterity', 'wisdom', 'inventory')
+  inventory = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
+  class Meta:
+    model = Character
+    fields = ('name', 'level', 'exp', 'hp', 'strength', 'intelligence', 'dexterity', 'wisdom', 'inventory')
 
 # ViewSets define the view behavior.
 class CharacterViewSet(viewsets.ModelViewSet):
-    queryset = Character.objects.all()
-    serializer_class = CharacterSerializer
+  queryset = Character.objects.all()
+  serializer_class = CharacterSerializer
+
+class FighterSerializer(serializers.HyperlinkedModelSerializer):
+  class Meta:
+    model = Fighter
+    fields = ('name', 'level', 'exp', 'hp', 'strength', 'intelligence', 'dexterity', 'wisdom', 'using_shield', 'rage')
+
+class FighterViewSet(viewsets.ModelViewSet):
+  queryset = Fighter.objects.all()
+  serializer_class = FighterSerializer
