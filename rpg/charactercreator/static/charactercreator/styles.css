@@ -1,0 +1,15 @@
+li a {
+  color: green;
+  display: block;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: orange;
+}
+
+ul {
+  padding-left: 0;
+  text-align: center;
+}
