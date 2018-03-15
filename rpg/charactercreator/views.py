@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Character, Fighter, Mage, Cleric, Thief, Necromancer
@@ -17,6 +18,7 @@ def getType(character):
 def index(request):
     return view_all_characters(request)  # HttpResponse("Character Creator Appal!")
 
+@login_required
 def view_all_characters(request):
     characters = Character.objects.all()
     context = {'characters': characters}
@@ -26,4 +28,8 @@ def view_character(request,character_id):
     character = Character.objects.get(pk=character_id)
     ct = getType(character)
     context = {'character': character, 'ct': ct}
+<<<<<<< HEAD
     return render(request, 'charactercreator/character.html', context)
+=======
+    return render(request, 'characters/character.html', context)
+>>>>>>> my_api
