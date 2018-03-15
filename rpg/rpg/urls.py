@@ -39,7 +39,7 @@ router.register(r'characters', CharacterViewSet)
 router.register(r'items', ItemViewSet)
 
 urlpatterns = [
-    path('charactercreator/', include('rpg.charactercreator.urls')),
+    path('charactercreator/', include('charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
