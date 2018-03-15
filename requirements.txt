@@ -1,5 +1,8 @@
 django==2.0.2
 django-allauth==0.35.0
-djangorestframework==3.7.7
-graphene-django>=2.0.dev
 django-filter==2.0.0.dev1
+djangorestframework==3.7.7
+dj-database-url==0.5.0
+graphene-django>=2.0.dev
+python-decouple==3.1
+whitenoise==3.3.1
