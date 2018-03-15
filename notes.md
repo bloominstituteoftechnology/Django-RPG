@@ -168,3 +168,7 @@ INSTALLED_APPS = [
 'heroky create appname' - creates app called appname
 
 'heroku git:remote -a app-name' - switch from one app to another 
+
+'git push heroku master' - launches and deloys the app. It also pushes any new changes you made to the app as well
+
+'git push -am "comment"' - commits change you made to files for it to be push up to the master heroku branch
