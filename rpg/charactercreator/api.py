@@ -17,3 +17,4 @@ class CharacterViewSet(viewsets.ModelViewSet):
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
 
+print('GOT THIS FAR! In character api.py')

@@ -21,6 +21,7 @@ from charactercreator.api import CharacterViewSet
 from armory.api import ItemViewSet
 from graphene_django.views import GraphQLView
 
+print('GOT THIS FAR! In urls.py')
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

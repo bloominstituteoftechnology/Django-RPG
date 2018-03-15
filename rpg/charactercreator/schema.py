@@ -21,4 +21,6 @@ class Query(graphene.ObjectType):
     def resolve_characters(self, info):
         return CharacterModel.objects.all()
 
+print('GOT THIS FAR! In character schema.py')
+
 schema = graphene.Schema(query=Query)

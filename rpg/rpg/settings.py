@@ -163,3 +163,5 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SITE_ID = 2
+
+print('GOT THIS FAR! In settings.py')

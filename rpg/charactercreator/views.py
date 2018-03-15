@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from .models import Character, Fighter, Mage, Cleric, Thief, Necromancer, Beast, Zombie
 from django import template
 
+print('GOT THIS FAR! In characterc--/views.py')
 register = template.Library()
 
 
