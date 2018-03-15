@@ -1,1 +1,1 @@
-web: python rpg/manage.py runserver ts-django-rpg.herokuapp.com:$PORT
+web: gunicorn rpg.wsgi --log-file -
