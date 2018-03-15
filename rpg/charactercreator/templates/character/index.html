@@ -1,4 +1,7 @@
 {% load static %}
+<form>
+  <input type="button" value="Logout" onclick="window.location.href='http://127.0.0.1:8000/accounts/logout/'" />
+</form>
 <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 <html>
 <div class="container">
@@ -33,8 +36,5 @@
 
   <p>Rage: {{ character.rage }}</p>
 </div>
-<form>
-  <input type="button" value="Logout" onclick="window.location.href='http://127.0.0.1:8000/accounts/logout/'" />
-</form>
 
 </html>
