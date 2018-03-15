@@ -31,14 +31,25 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
+    # django packages
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
-    'armory',
-    'charactercreator',
+    # 3rd party packages
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'graphene_django',
+    'rest_framework',
+    # created apps
+    'rpg.armory',
+    'rpg.charactercreator',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
@@ -120,3 +131,31 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# have only one registered domain so site id is 1
+SITE_ID  = 1
+
+# after login go here, after logout go to the login screen
+LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/charactercreator/characters/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+GRAPHENE = {
+    'SCHEMA': 'rpg.charactercreator.schema.schema',
+    # 'SCHEMA': 'armory.schema.schema' ----> if you put this here, you won't get your charactercreator schema
+}

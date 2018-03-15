@@ -1,1 +1,11 @@
+# django framework
 django==2.0.2
+
+# oAuth package
+django-allauth==0.35.0
+
+# rest api
+djangorestframework==3.7.7
+
+# graphQL package for django is called graphene
+graphene-django>=2.0.dev
