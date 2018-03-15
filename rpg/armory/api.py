@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import Item, Weapon
+from .models import Item
 
 class ItemSerializer(serializers.ModelSerializer):
     is_weapon = serializers.BooleanField(source='weapon.is_weapon')
