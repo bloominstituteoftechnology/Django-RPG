@@ -1,5 +1,5 @@
 from django.db import models
-from armory.models import Items
+from rpg.armory.models import Items
 
 # Create your models of RPG characters here.
 # do not push this and make and request as it will result in git conflicets 

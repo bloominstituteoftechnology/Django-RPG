@@ -158,3 +158,13 @@ INSTALLED_APPS = [
 
 # environment variables 
 * variable typically as PATH which are varaibles exposed to your OS. Usually used for either creating new environment, keeping secrets safe, deploying websites.
+
+# Heroku Install
+
+'brew install heroku/brew/heroku' - installs heroku on mac using brew. 
+
+'heroku login' - login heroku
+
+'heroky create appname' - creates app called appname
+
+'heroku git:remote -a app-name' - switch from one app to another 
