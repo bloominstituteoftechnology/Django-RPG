@@ -42,7 +42,7 @@ router.register(r'items', ItemViewSet)
 
 
 urlpatterns = [
-    path(r'/', HomeView.as_view()),
+    path(r'^$', HomeView.as_view(), name='home'),
     path('charactercreator/', include('rpg.charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),
