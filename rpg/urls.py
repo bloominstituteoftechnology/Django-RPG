@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.urls import include, path, re_path
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import routers, serializers, viewsets
 from rpg.charactercreator.api import CharacterViewSet
 from rpg.armory.api import ItemViewSet
@@ -44,5 +45,5 @@ urlpatterns = [
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
     re_path(r'^api-auth/', include('rest_framework.urls')),
-    re_path(r'^graphql/', GraphQLView.as_view(graphiql=True)),
+    re_path(r'^graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
 ]

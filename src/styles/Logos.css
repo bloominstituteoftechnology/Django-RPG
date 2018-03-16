@@ -1,0 +1,26 @@
+div {
+    text-align: center;
+    width: 100%;
+}
+
+img {
+    margin-top: 100px;
+    width: 30%;
+}
+
+.style1 {
+    background-color: lightslategrey;
+    
+}
+
+.style2 {
+   background-color: lightseagreen;
+}
+
+.style3 {
+    background-color: lightskyblue;
+}
+
+.style4 {
+    background-color: whitesmoke;
+}
