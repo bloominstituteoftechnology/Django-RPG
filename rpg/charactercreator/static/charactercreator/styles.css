@@ -5,6 +5,8 @@ body {
 
 div.header {
   background-color: 535460;
+  margin: 4px;
+  padding: 4px;
 }
 
 h1 {
@@ -15,6 +17,7 @@ h1 {
 
 h2 {
   color: 9396B2;
+  font-size: 40px;
 }
 
 p {
