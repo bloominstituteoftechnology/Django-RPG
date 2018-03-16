@@ -21,6 +21,7 @@ from rpg.charactercreator.api import CharacterViewSet
 from rpg.armory.api import ItemViewSet
 from graphene_django.views import GraphQLView
 
+from . import views
 # Serializers define the API representation.
 
 
