@@ -5,7 +5,7 @@ from rpg.charactercreator.models import Character, Fighter, Mage, Cleric, Thief,
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Character
-        fields = ('name', 'level', 'inventory')
+        fields = ('name', 'level', 'inventory', 'exp', 'hp', 'strength', 'intelligence', 'dexterity', 'wisdom')
 
 # ViewSets define the view behavior.
 class CharacterViewSet(viewsets.ModelViewSet):
