@@ -23,7 +23,7 @@ def view_all_characters(request):
     return render(request, 'characters/index.html', context)
 
 def view_character(request):
-    character = Character.objects.get(pk=character_id)
+    character = Character.objects.get(character_id)
     charType = getType(character)
     context = {'character': character, 'charType': charType}
     return render(request, 'character/index.html', context)
