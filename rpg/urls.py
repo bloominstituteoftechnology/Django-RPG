@@ -22,15 +22,20 @@ from rpg.armory.api import ItemViewSet
 from graphene_django.views import GraphQLView
 
 # Serializers define the API representation.
+
+
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('url', 'username', 'email', 'is_staff')
 
 # ViewSets defind the view behavior.
+
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
 
 # Routers provide an easy way of automatically determining the URL configuration
 router = routers.DefaultRouter()
