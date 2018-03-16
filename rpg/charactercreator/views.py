@@ -27,3 +27,13 @@ def view_all_items(request, character_id):
     items = character.inventory.get_queryset()
     context = {'items': items}
     return render(request, 'characters/items.html', context)
+
+@login_required
+def view_item(request, character_id, item_id):
+    try:
+        character = Character.objects.get(pk=character_id) 
+        item = character.inventory.get_queryset()[0] # temp
+        context = {'item': item}
+        return render(request, 'characters/item_details.html', context)
+    except Character.DoesNotExist:
+        raise Http404("No Items matches the given query.")
