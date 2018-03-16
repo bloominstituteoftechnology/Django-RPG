@@ -12,6 +12,7 @@ def view_all_characters(request):
     context = {'characters': characters}
     return render(request, 'characters/index.html', context)
 
+@login_required
 def view_character(request, character_id):
     try:
         character = Character.objects.get(pk=character_id)
@@ -20,6 +21,7 @@ def view_character(request, character_id):
     except Character.DoesNotExist:
         raise Http404("No Character matches the given query.")
 
+@login_required
 def view_all_items(request, character_id):
     character = Character.objects.get(pk=character_id) 
     items = character.inventory.get_queryset()
