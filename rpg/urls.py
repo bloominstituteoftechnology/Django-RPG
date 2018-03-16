@@ -21,7 +21,7 @@ from rpg.charactercreator.api import CharacterViewSet
 from rpg.armory.api import ItemViewSet
 from graphene_django.views import GraphQLView
 from django.views.generic.base import TemplateView
-from views import HomeView
+from rpg.views import HomeView
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
