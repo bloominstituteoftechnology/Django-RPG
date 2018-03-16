@@ -9,8 +9,8 @@ class CharacterSerializer(serializers.HyperlinkedModelSerializer):
         model = Character
         fields = ('name', 'level')
 
-# ViewSets define the view behavior.
 
+# ViewSets define the view behavior.
 
 class CharacterViewSet(viewsets.ModelViewSet):
     queryset = Character.objects.all()
