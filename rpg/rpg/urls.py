@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.urls import include, path, re_path
 from rest_framework import routers, serializers, viewsets
-from charactercreator.api import CharacterViewSet
-from armory.api import ItemViewSet
+from rpg.charactercreator.api import CharacterViewSet
+from rpg.armory.api import ItemViewSet
 from graphene_django.views import GraphQLView
 
 print('GOT THIS FAR! In urls.py')
@@ -40,7 +40,7 @@ router.register(r'characters', CharacterViewSet)
 router.register(r'items', ItemViewSet)
 
 urlpatterns = [
-    path('charactercreator/', include('charactercreator.urls')),
+    path('charactercreator/', include('rpg.charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
