@@ -112,7 +112,7 @@ GRAPHENE = {
 }
 
 
-WSGI_APPLICATION = 'rpg.wsgi.application'
+WSGI_APPLICATION = 'rpg.rpg.wsgi.application'
 connection_string = config('DATABASE')
 default_parameters = dj_database_url.parse(connection_string, conn_max_age=600)
 
