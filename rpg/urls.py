@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.urls import include, path, re_path
+from django.views.generic import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import routers, serializers, viewsets
 from rpg.charactercreator.api import CharacterViewSet
