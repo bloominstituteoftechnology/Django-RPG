@@ -4,11 +4,6 @@
     <li>{{ character.level }}</li>
     <li>{{ character.exp }}</li>
     <li>{{ character.hp }}</li>
-    <li>Inventory:<ul>
-        {% for item in inventory %}
-        <li>{{ item.name }}</li>
-        {% endfor %}
-    </ul></li>
 </ul>
 {% else %}
 <p>No character not available.</p>
