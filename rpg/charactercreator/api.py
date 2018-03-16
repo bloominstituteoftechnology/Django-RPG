@@ -15,7 +15,7 @@ class CharacterViewSet(viewsets.ModelViewSet):
 class FighterSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Fighter
-    fields = ('name', 'level', 'exp', 'hp', 'strength', 'intelligence', 'dexterity', 'wisdom', 'using_shield', 'rage')
+    fields = ('name', 'level', 'exp', 'hp', 'strength', 'intelligence', 'dexterity', 'wisdom', 'using_shield', 'rage', 'inventory')
 
 class FighterViewSet(viewsets.ModelViewSet):
   queryset = Fighter.objects.all()
