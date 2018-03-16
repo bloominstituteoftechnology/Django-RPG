@@ -1,5 +1,7 @@
 {% load static %} {% comment %}
-
+<form>
+  <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
+  />
 </form> {% endcomment %}
 <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 <html>
@@ -8,7 +10,7 @@
 
   <h1>{{ character.name }}</h1>
 
-  <p>Class: {{ charClass }}</p>
+  <p><strong>{{ charClass }}</strong></p>
 
   <p>Level: {{ character.level }}</p>
 
@@ -23,7 +25,12 @@
   <p>Dexterity: {{ character.dexterity }}</p>
 
   <p>Wisdom: {{ character.wisdom }}</p>
-{% endif %}
+
+  {% if character.using_shield %} <p>Shield: {{ character.using_shield }}</p> {% endif %}
+
+  <p>Rage: {{ character.rage }}</p>
+
+  {% endif %}
 </div>
 
 </html>

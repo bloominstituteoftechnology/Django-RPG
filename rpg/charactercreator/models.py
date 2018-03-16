@@ -42,3 +42,32 @@ class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
     # Charged talismans can be used to raise the dead!
     talisman_charged = models.BooleanField(default=True)
+
+class Walker(Character):
+    """Maxed out dude on drugs"""
+    rage = 100
+    energy = None
+    mana = None
+    has_pet = None
+    hp = 10
+    strength = 50
+    intelligence = 2
+    dexterity = 2
+    can_infect_others = models.BooleanField(default=True)
+
+class Runner(Walker):
+    hp = 25
+    strength = 100
+    intelligence = 30
+    dexterity = 50
+
+class Berzerker(Character):
+    rage = 100
+    energy = 100
+    dexterity = 100
+    hp = 100
+    strength = 75
+    intelligence = 25
+    energy = None
+    mana = None
+    has_pet = None
