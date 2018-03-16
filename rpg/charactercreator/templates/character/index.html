@@ -10,7 +10,9 @@
 <h1>
   {{ character.name }}</h1>
 <div class="container">
-  var characterImage = 'charactercreator/'+{{ charClass }}+'.png'
+  <script>
+    var characterImage = 'charactercreator/' + {{ charClass }}+'.png'
+  </script>
   <img src="{% static characterImage  %}" alt="fighter image" />
 
 
