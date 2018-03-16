@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     # development tools
-    'IPython'
+    'IPython',
     # Our apps
     'rpg.armory',
     'rpg.charactercreator',
