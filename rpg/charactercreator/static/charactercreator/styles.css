@@ -46,6 +46,7 @@ img {
 
 ul {
     list-style-type: none; 
+    columns: 100px 3;
 }
 
 a {
