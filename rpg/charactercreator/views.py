@@ -7,8 +7,8 @@ from django import template
 # everything that follows @login_required will hide the endpoint until a user logs in
 
 
-def index(request):
-    return render(request, 'main/index.html')
+# def index(request):
+#     return render(request, 'main/index.html')
 
 
 @login_required

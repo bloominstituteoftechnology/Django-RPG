@@ -44,6 +44,7 @@ router.register(r'characters', CharacterViewSet)
 router.register(r'items', ItemViewSet)
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('charactercreator/', include('rpg.charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),
