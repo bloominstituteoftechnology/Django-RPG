@@ -48,10 +48,10 @@ li a {
   -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
   transition: font-size 0.3s ease, background-color 0.3s ease;
   display: block;
-  width: 200px;
+  width: 500px;
 }
 
 li a:hover {
   font-size: 30px;
-  background: #224422;
+  color: #224422;
 }
