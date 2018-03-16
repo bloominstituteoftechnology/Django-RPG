@@ -15,9 +15,9 @@
   {% if character.thief %}<img src="{% static 'charactercreator/thief.png'  %}" alt="thief image" />{% endif %}
   {% if character.cleric %}<img src="{% static 'charactercreator/cleric.jpg'  %}" alt="cleric image" /> {% endif %}
   {% if character.necromancer %}<img src="{% static 'charactercreator/necromancer.jpg'  %}" alt="necromancer image" /> {% endif %}
-  {% if character.walker %}<img src="{% static 'charactercreator/walker.jpg'  %}" alt="walker image" /> {% endif %}
+  {% comment %} {% if character.walker %}<img src="{% static 'charactercreator/walker.jpg'  %}" alt="walker image" /> {% endif %}
   {% if character.runner %}<img src="{% static 'charactercreator/runner.jpg'  %}" alt="runner image" /> {% endif %}
-  {% if character.berzerker %}<img src="{% static 'charactercreator/berzerker.jpg'  %}" alt="berzerker image" /> {% endif %}
+  {% if character.berzerker %}<img src="{% static 'charactercreator/berzerker.jpg'  %}" alt="berzerker image" /> {% endif %} {% endcomment %}
 
   <h2>
     <strong>{{ charClass }}</strong>
