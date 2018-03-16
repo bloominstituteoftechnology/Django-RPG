@@ -1,4 +1,3 @@
-[
     {
     model: "charactercreator.character",
     pk: 1,
@@ -11602,4 +11601,3 @@
     power: 0
     }
     }
-    ]
