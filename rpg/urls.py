@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path, re_path, url
+from django.urls import include, path, re_path
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from rpg.charactercreator.api import CharacterViewSet
@@ -42,7 +42,7 @@ router.register(r'items', ItemViewSet)
 
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view()),
+    path(r'^$', HomeView.as_view()),
     path('charactercreator/', include('rpg.charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),
