@@ -48,10 +48,11 @@ li {
     list-style-type: none; 
     font-size: 15px;
     color: 535460;
+    text-decoration: none;  
     margin: 2px;
 }
 
 li:hover {
-    background-color: e1e918;
+    color: e1e918;
 
 }
