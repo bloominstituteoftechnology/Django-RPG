@@ -16,6 +16,25 @@ def view_all_characters(request):
 @login_required
 def view_character(request, character_id):
     character = get_object_or_404(Character, pk=character_id)
+    try:
+        charClass = character.fighter.__class__.__name__
+    except:
+        try:
+            charClass = character.mage.__class__.__name__
+        except:
+            try:
+                charClass = character.thief.__class__.__name__
+            except:
+                try:
+                    charClass = character.cleric.__class__.__name__
+                except:
+                    try:
+                        charClass = character.beast.__class__.__name__
+                    except:
+                        try:
+                            charClass = character.zombie.__class__.__name__
+                        except:
+                            pass
     return render(request, 'character/index.html', {'character': character, 'charClass': charClass})
 
 # context = {'character': character, 'charClass': charClass}
