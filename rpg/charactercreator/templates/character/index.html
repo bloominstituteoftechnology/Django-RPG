@@ -1,10 +1,10 @@
 {% if character %}
 <ul>
-    <li>{{ character.name }}</li>
-    <li>{{ charType }}</li>
-    <li>{{ character.level }}</li>
-    <li>{{ character.exp }}</li>
-    <li>{{ character.hp }}</li>
+    <li>Character Name: {{ character.name }}</li>
+    <li>Character Type: {{ charType.type }}</li>
+    <li>Character Level: {{ character.level }}</li>
+    <li>Character Exp: {{ character.exp }}</li>
+    <li>Character HP: {{ character.hp }}</li>
 </ul>
 {% else %}
 <p>No character not available.</p>
