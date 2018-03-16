@@ -1,34 +1,35 @@
 {% load static %}
 
 <html>
+<div class="container">
+  <h1>{{ character.name }}</h1>
+  <h2>{{ charClass }}</h2>
+  <h2>{{ character.class_name }}</h2>
 
-<h1>{{ character.name }}</h1>
-<h2>{{ charClass }}</h2>
-<h2>{{ character.class_name }}</h2>
+  <p>ID: {{ character.character_id }}</p>
 
-<p>ID: {{ character.character_id }}</p>
+  <p>Level: {{ character.level }}</p>
 
-<p>Level: {{ character.level }}</p>
+  <p>Experience: {{ character.exp }}</p>
 
-<p>Experience: {{ character.exp }}</p>
+  <p>Health: {{ character.hp }}</p>
 
-<p>Health: {{ character.hp }}</p>
+  <p>Strength: {{ character.strength }}</p>
 
-<p>Strength: {{ character.strength }}</p>
+  <p>Intelligence: {{ character.intelligence }}</p>
 
-<p>Intelligence: {{ character.intelligence }}</p>
+  <p>Dexterity: {{ character.dexterity }}</p>
 
-<p>Dexterity: {{ character.dexterity }}</p>
+  <p>Wisdom: {{ character.wisdom }}</p>
 
-<p>Wisdom: {{ character.wisdom }}</p>
+  <p>Has a Shield: {{ character.using_shield }}</p>
 
-<p>Has a Shield: {{ character.using_shield }}</p>
+  <p>Rage: {{ character.rage }}</p>
 
-<p>Rage: {{ character.rage }}</p>
-
-{% if error_message %}
-<p>
-  <strong>{{ error_message }}</strong>
-</p>{% endif %}
+  {% if error_message %}
+  <p>
+    <strong>{{ error_message }}</strong>
+  </p>{% endif %}
+</div>
 
 </html>
