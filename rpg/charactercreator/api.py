@@ -13,6 +13,7 @@ class CharacterViewSet(viewsets.ModelViewSet):
   serializer_class = CharacterSerializer
 
 class FighterSerializer(serializers.HyperlinkedModelSerializer):
+  inventory = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
   class Meta:
     model = Fighter
     fields = ('name', 'level', 'exp', 'hp', 'strength', 'intelligence', 'dexterity', 'wisdom', 'using_shield', 'rage', 'inventory')
