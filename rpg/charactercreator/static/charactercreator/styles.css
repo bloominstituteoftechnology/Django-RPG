@@ -44,8 +44,11 @@ img {
     float: right;
 }
 
-a {
+ul {
     list-style-type: none; 
+}
+
+a {
     font-size: 15px;
     color: 535460;
     text-decoration: none;  
