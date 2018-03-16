@@ -70,7 +70,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = ( 'localhost:3000', )
+CORS_ORIGIN_WHITELIST = ( '.sanfordev.com','localhost:3000' )
 # CORS_ORIGIN_ALLOW_ALL=True
 
 ROOT_URLCONF = 'rpg.urls'
@@ -181,7 +181,8 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_DIRS = [
   os.path.join(BASE_DIR, 'build/static'),
 ]

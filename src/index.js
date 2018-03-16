@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
 
 // 1
 import { ApolloProvider } from 'react-apollo';
@@ -11,7 +10,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 // 2
-const httpLink = new HttpLink({ uri: 'http://localhost:8000/graphql/' });
+const httpLink = new HttpLink({ uri: 'http://rpg.sanfordev.com/graphql/' });
 
 // 3
 const client = new ApolloClient({
@@ -27,4 +26,3 @@ ReactDOM.render(
     </ApolloProvider>
     , document.getElementById('root')
   )
-  registerServiceWorker()
