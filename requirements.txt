@@ -10,10 +10,12 @@ graphene==2.0.1
 graphene-django==2.0.0
 graphql-core==2.0
 graphql-relay==0.4.5
+gunicorn==19.7.1
 idna==2.6
 iso8601==0.1.12
 Markdown==2.6.11
 oauthlib==2.0.6
+psycopg2-binary==2.7.4
 promise==2.1
 python-decouple==3.1
 python3-openid==3.1.0

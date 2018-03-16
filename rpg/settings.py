@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.staticfiles',
+<<<<<<< HEAD:rpg/settings.py
     # 3rd party packages
     'allauth',
     'allauth.account',
@@ -53,6 +54,10 @@ INSTALLED_APPS = [
     # Our apps
     'rpg.armory',
     'rpg.charactercreator',
+=======
+    'armory',
+    'charactercreator',
+>>>>>>> 6137dda1a64e090fa9968f967f5cc68132ff0c66:rpg/rpg/settings.py
 ]
 
 MIDDLEWARE = [
