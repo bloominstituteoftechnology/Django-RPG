@@ -140,7 +140,6 @@ SITE_ID = 1
 
 # redirect after authenticating
 LOGIN_REDIRECT_URL = "/charactercreator/characters/"
-ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
 
 # not required, remove for debugging
 AUTHENTICATION_BACKENDS = (
