@@ -12,7 +12,7 @@ h3 a {
   color: green;
 }
 
-li a {
+/* li a {
   color: green;
   display: block;
   font-size: 30px;
@@ -21,9 +21,37 @@ li a {
 
 li a:hover {
   color: #224422;
-}
+} */
 
 ul {
-  padding-left: 0;
-  text-align: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 200px;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: #224422;
 }
