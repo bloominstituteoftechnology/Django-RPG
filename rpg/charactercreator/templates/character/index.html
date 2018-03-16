@@ -1,18 +1,29 @@
 {% load static %}
-
+<form>
+  <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
+  />
+</form>
+<link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 <html>
 <div class="container">
-  <h1>{{ character.name }}</h1>
-  <h2>{{ charClass }}</h2>
-  <h2>{{ character.class_name }}</h2>
+  {% if character.fighter %}
+  <img src="{% static 'charactercreator/fighter.png'  %}" alt="fighter image" /> {% endif %}{% if character.mage %}
+  <img src="{% static 'charactercreator/mage.png'  %}" alt="mage image" /> {% endif %}{% if character.thief %}
+  <img src="{% static 'charactercreator/thief.png'  %}" alt="thief image" />{% endif %}{% if character.cleric %}
+  <img src="{% static 'charactercreator/cleric.png'  %}" alt="cleric image" /> {% endif %}
 
-  <p>ID: {{ character.character_id }}</p>
+
+
+  <h1>
+    {{ character.name }}</h1>
+
+  <p>Class: {{ charClass }}</p>
 
   <p>Level: {{ character.level }}</p>
 
   <p>Experience: {{ character.exp }}</p>
 
-  <p>Health: {{ character.hp }}</p>
+  <p>Hit Points: {{ character.hp }}</p>
 
   <p>Strength: {{ character.strength }}</p>
 
@@ -22,14 +33,9 @@
 
   <p>Wisdom: {{ character.wisdom }}</p>
 
-  <p>Has a Shield: {{ character.using_shield }}</p>
+  <p>Shield: {{ character.using_shield }}</p>
 
   <p>Rage: {{ character.rage }}</p>
-
-  {% if error_message %}
-  <p>
-    <strong>{{ error_message }}</strong>
-  </p>{% endif %}
 </div>
 
 </html>
