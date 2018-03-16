@@ -64,6 +64,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'graphene_django',
     'rest_framework',
+    # development tools
+    'IPython'
     # Our apps
     'rpg.armory',
     'rpg.charactercreator',
