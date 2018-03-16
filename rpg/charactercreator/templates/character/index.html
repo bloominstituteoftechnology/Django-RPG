@@ -1,34 +1,28 @@
-{% load static %}
-{% comment %} <form>
-  <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
-  />
-</form> {% endcomment %}
-<link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
-<html>
-<div class="container">
-    {% if character %}
+<h1>{{ character.name }}</h1>
+<h2>{{ charClass }}</h2>
+<h2>{{ character.class_name }}</h2>
 
-  <h1>{{ character.name }}</h1>
+<p>ID: {{ character.character_id }}</p>
 
-  <p>Class: {{ charClass }}</p>
+<p>Level: {{ character.level }}</p>
 
-  <p>Level: {{ character.level }}</p>
+<p>Experience: {{ character.exp }}</p>
 
-  <p>Experience: {{ character.exp }}</p>
+<p>Health: {{ character.hp }}</p>
 
-  <p>Hit Points: {{ character.hp }}</p>
+<p>Strength: {{ character.strength }}</p>
 
-  <p>Strength: {{ character.strength }}</p>
+<p>Intelligence: {{ character.intelligence }}</p>
 
-  <p>Intelligence: {{ character.intelligence }}</p>
+<p>Dexterity: {{ character.dexterity }}</p>
 
-  <p>Dexterity: {{ character.dexterity }}</p>
+<p>Wisdom: {{ character.wisdom }}</p>
 
-  <p>Wisdom: {{ character.wisdom }}</p>
+<p>Has a Shield: {{ character.using_shield }}</p>
 
-  <p>Shield: {{ character.using_shield }}</p>
+<p>Rage: {{ character.rage }}</p>
 
-  <p>Rage: {{ character.rage }}</p>
-</div>
-
-</html>
+{% if error_message %}
+<p>
+  <strong>{{ error_message }}</strong>
+</p>{% endif %}
