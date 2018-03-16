@@ -26,7 +26,6 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
-# DEBUG = True
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
@@ -99,12 +98,12 @@ REST_FRAMEWORK = {
 }
 
 GRAPHENE = {
-    'SCHEMA': 'charactercreator.schema.schema',
+    'SCHEMA': 'rpg.charactercreator.schema.schema',
 }
 
 WSGI_APPLICATION = 'rpg.wsgi.application'
 
-# LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/charactercreator/characters/"
+LOGIN_REDIRECT_URL = "https://my-rpg-app.herokuapp.com/charactercreator/characters/"
 
 
 # Database
