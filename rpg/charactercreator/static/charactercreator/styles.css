@@ -5,6 +5,10 @@ body {
 }
 
 h3, h3 a, h1 {
+  color: #224422;
+}
+
+h3 a {
   color: green;
 }
 
