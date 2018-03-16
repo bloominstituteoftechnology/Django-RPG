@@ -8,7 +8,7 @@ class CharacterNode(DjangoObjectType):
     model = CharacterModel
     interfaces = (graphene.relay.Node,)
     filter_fields = {
-      'name': ['exact', 'icontains', 'istartwith'],
+      'name': ['exact', 'icontains', 'istartswith'],
       'level': ['exact', 'it', 'gt'],
     }
 
