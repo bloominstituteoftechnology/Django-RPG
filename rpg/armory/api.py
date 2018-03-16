@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import Item
+from rpg.armory.models import Item
 
 # Serializers define the API representation.
 

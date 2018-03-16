@@ -1,5 +1,5 @@
 from rest_framework import serializers, viewsets
-from .models import Character, Fighter, Mage, Cleric, Thief, Necromancer, Zombie, Beast
+from rpg.charactercreator.models import Character, Fighter, Mage, Cleric, Thief, Necromancer, Zombie, Beast
 
 # Serializers define the API representation.
 
