@@ -1,30 +1,40 @@
 body {
-  background-color: #e8e8ee;
+    background-color: #e8e8ee;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+div.header {
+  background-color: 535460;
 }
 
 h1 {
-  color: 535460;
-  text-shadow: 3px 2px 9396b2;
-  font-size: 50px;
+    color: e1e918;
+    text-shadow: 3px 2px b8b8b9;
+    font-size: 50px;
+}
+
+h2 {
+  color: 9396B2;
 }
 
 p {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 div.container {
-  width: 96%;
-  max-width: 960px;
-  margin: 0 auto; /* to center the container */
+    width: 96%;
+    max-width: 960px;
+    margin: 0 auto;
+    /* to center the container */
 }
 
 img {
-  display: inline-block;
-  max-height: 60%;
-  width:50%;
-  position:relative;
-  background:url() 50% 50% no-repeat;
-  background-size:cover;
-  background-clip:content-box;
-  float: right;
+    display: inline-block;
+    max-height: 60%;
+    width: 50%;
+    position: relative;
+    background: url() 50% 50% no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    float: right;
 }
