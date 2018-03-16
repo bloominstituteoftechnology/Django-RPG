@@ -46,6 +46,6 @@ urlpatterns = [
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
     re_path(r'^api-auth/', include('rest_framework.urls')),
-    re_path(r'^graphql/', GraphQLView.as_view(graphiql=True)),
+    re_path(r'^graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     re_path('.*', TemplateView.as_view(template_name='index.html')),
 ]
