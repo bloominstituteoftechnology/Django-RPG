@@ -12,7 +12,7 @@ import os
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rpg.rpg.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rpg.settings")
 
 print('GOT THIS FAR! In wsgi.py')
 
