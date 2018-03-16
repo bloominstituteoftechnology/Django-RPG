@@ -18,7 +18,7 @@ from django.urls import include, path, re_path
 from rest_framework import routers, serializers, viewsets
 from rpg.charactercreator.api import CharacterViewSet
 from graphene_django.views import GraphQLView
-from armory.api import ItemViewSet
+from rpg.armory.api import ItemViewSet
 
 # Serializers define the API representation.
 
