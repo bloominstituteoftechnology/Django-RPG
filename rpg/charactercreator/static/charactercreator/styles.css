@@ -34,14 +34,14 @@ div.container {
 }
 
 img {
-    display: inline-block;
+    /* display: inline-block; */
     max-height: 60%;
     width: 50%;
     position: relative;
     background: url() 50% 50% no-repeat;
     background-size: cover;
     background-clip: content-box;
-    float: right;
+    /* float: right; */
 }
 
 ul {
