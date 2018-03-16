@@ -29,7 +29,7 @@ SECRET_KEY = 'sn_#zt!4p&gnj+@l_r#pwq^b)h@fv2%8@-$a=kbki1so=d7_ma'
 DEBUG = True
 # DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'jingle-django-rpg.herokuapp.com']
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 # Application definition
