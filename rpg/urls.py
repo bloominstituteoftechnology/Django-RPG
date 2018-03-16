@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path, re_path
+from django.urls import include, path, re_path, url
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from rpg.charactercreator.api import CharacterViewSet
 from rpg.armory.api import ItemViewSet
 from graphene_django.views import GraphQLView
+from django.views.generic.base import TemplateView
+from views import HomeView
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -40,6 +42,7 @@ router.register(r'items', ItemViewSet)
 
 
 urlpatterns = [
+    url(r'^$', HomeView.as_view()),
     path('charactercreator/', include('rpg.charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),

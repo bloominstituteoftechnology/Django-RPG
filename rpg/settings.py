@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.amazon',
     'rest_framework',
     'graphene_django',
     # My apps
