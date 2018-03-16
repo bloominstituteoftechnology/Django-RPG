@@ -30,12 +30,18 @@ def view_character(request, character_id):
                     charClass = character.cleric.__class__.__name__
                 except:
                     try:
-                        charClass = character.beast.__class__.__name__
+                        charClass = character.necromancer.__class__.__name__
                     except:
                         try:
-                            charClass = character.zombie.__class__.__name__
+                            charClass = character.walker.__class__.__name__
                         except:
-                            pass
+                            try:
+                            charClass = character.runner.__class__.__name__
+                            except:
+                                try:
+                                charClass = character.berzerker.__class__.__name__
+                                except:
+                                    pass
     return render(request, 'character/index.html', {'character': character, 'charClass': charClass})
 
 # context = {'character': character, 'charClass': charClass}

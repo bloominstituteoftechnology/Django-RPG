@@ -32,6 +32,11 @@
 
   {% if character.has_pet %} <p>Has Pet: {{ character.has_pet }}</p> {% endif %}
 
+  {% if character.mana %} <p>Mana: {{ character.mana }}</p> {% endif %}
+
+  {% if character.is_sneaking %} <p>Sneaky Sneaky: {{ character.is_sneaking }}</p> {% endif %}
+
+  {% if character.can_infect_others %} <p><b><i>Infectious Zombie Alert: </i></b>{{ character.can_infect_others }}</p> {% endif %}
 
   {% if character.inventory %} <h2>In the Bag of Holding</h2><p>{{ character.inventory.name }}</p> {% endif %}
 
