@@ -1,7 +1,7 @@
-{% load static %} characterImage = 'charactercreator/'+{{ charClass }}+'.png'
+{% load static %}
 <form>
   <!-- <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
-  /> -->
+    /> -->
   <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
   />
 </form>
@@ -10,6 +10,7 @@
 <h1>
   {{ character.name }}</h1>
 <div class="container">
+  var characterImage = 'charactercreator/'+{{ charClass }}+'.png'
   <img src="{% static characterImage  %}" alt="fighter image" />
 
 
