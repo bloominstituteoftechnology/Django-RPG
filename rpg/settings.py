@@ -113,7 +113,7 @@ REST_FRAMEWORK = {
 }
 
 GRAPHENE = {
-    'SCHEMA': 'rgp.charactercreator.schema.schema'
+    'SCHEMA': 'rpg.charactercreator.schema.schema'
 }
 
 
