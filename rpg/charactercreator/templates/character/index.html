@@ -3,14 +3,14 @@
   <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
   />
 </form>
-<link rel="stylesheet" type="text/css" href="{% static 'https://s3.us-east-2.amazonaws.com/djangorpg/styles.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 <html>
 <div class="container">
   {% if character.fighter %}
-  <img src="{% static 'https://s3.us-east-2.amazonaws.com/djangorpg/fighter.png'  %}" alt="fighter image" /> {% endif %}{% if character.mage %}
-  <img src="{% static 'https://s3.us-east-2.amazonaws.com/djangorpg/mage.png'  %}" alt="mage image" /> {% endif %}{% if character.thief %}
-  <img src="{% static 'https://s3.us-east-2.amazonaws.com/djangorpg/thief.png'  %}" alt="thief image" />{% endif %}{% if character.cleric %}
-  <img src="{% static 'https://s3.us-east-2.amazonaws.com/djangorpg/cleric.png'  %}" alt="cleric image" /> {% endif %}
+  <img src="{% static 'charactercreator/fighter.png'  %}" alt="fighter image" /> {% endif %}{% if character.mage %}
+  <img src="{% static 'charactercreator/mage.png'  %}" alt="mage image" /> {% endif %}{% if character.thief %}
+  <img src="{% static 'charactercreator/thief.png'  %}" alt="thief image" />{% endif %}{% if character.cleric %}
+  <img src="{% static 'charactercreator/cleric.png'  %}" alt="cleric image" /> {% endif %}
 
 
 
