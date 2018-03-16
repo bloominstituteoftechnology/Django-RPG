@@ -1,9 +1,21 @@
-{% if characters %}
-<ul>
-    {% for character in characters %}
-    <li><a href="/charactercreator/character/{{ character.character_id }}/">{{ character.name }}</a></li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No characters are available.</p>
-{% endif %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
+<html>
+<div class="header">
+    <h1>Choose a Character</h1>
+</div>
+<div class="container">
+    {% if characters %}
+    <ul class="characterList">
+        {% for character in characters %}
+        <li>
+            <a href="/charactercreator/character/{{ character.character_id }}/">{{ character.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No characters are available.</p>
+    {% endif %}
+</div>
+
+</html>

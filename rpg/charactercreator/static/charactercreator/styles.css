@@ -43,3 +43,7 @@ img {
     background-clip: content-box;
     float: right;
 }
+
+ul {
+    list-style-type: none; 
+}
