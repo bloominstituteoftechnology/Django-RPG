@@ -46,4 +46,11 @@ img {
 
 ul {
     list-style-type: none; 
+    font-size: 15px;
+    color: b8b8b9;
+    margin: 1px;
+}
+
+ul.hover {
+    color: e1e918;
 }
