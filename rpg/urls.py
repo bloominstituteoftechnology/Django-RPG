@@ -19,6 +19,7 @@ from django.urls import include, path, re_path
 from rest_framework import routers, serializers, viewsets
 from rpg.charactercreator.api import CharacterViewSet, FighterViewSet
 from graphene_django.views import GraphQLView
+from . import views
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
