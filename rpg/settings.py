@@ -141,7 +141,7 @@ SITE_ID  = 1
 
 # after login go here, after logout go to the login screen
 LOGIN_REDIRECT_URL = "/charactercreator/characters/"
-ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
