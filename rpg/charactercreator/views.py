@@ -31,5 +31,7 @@ def view_character(request, character_id):
                     charClass = character.cleric.__class__.__name__
                 except:
                     pass
-    context = {'character': character, 'charClass': charClass}
+    charImage = f'charactercreator/{charClass}.png'
+    context = {'character': character,
+               'charClass': charClass, 'charImage': charImage}
     return render(request, 'character/index.html', context)

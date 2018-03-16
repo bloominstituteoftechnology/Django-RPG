@@ -1,19 +1,21 @@
-{% load static %} {% with 'charactercreator/' + charClass + '.png' as characterImage %}
+{% load static %}
+
 <form>
-  <!-- <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
-    /> -->
+
   <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
   />
+
 </form>
+
 <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
+
 <html>
-<h1>
-  {{ character.name }}</h1>
+
+<h1>{{ character.name }}</h1>
+
 <div class="container">
-  <p>charaterImage: {{ characterImage }}</p>
-  <img src="{% static characterImage  %}" alt="fighter image" />
 
-
+  <img src="{% static {{ characterImage }}  %}" alt="fighter image" />
 
   <p>Class: {{ charClass }}</p>
 
