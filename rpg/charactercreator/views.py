@@ -32,7 +32,7 @@ def view_all_items(request, character_id):
 def view_item(request, character_id, item_id):
     try:
         character = Character.objects.get(pk=character_id) 
-        item = character.inventory.get_queryset()[0] # temp
+        item = character.inventory.get(pk=item_id)
         context = {'item': item}
         return render(request, 'characters/item_details.html', context)
     except Character.DoesNotExist:
