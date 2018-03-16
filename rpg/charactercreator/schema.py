@@ -29,8 +29,7 @@ class Item(DjangoObjectType):
 class CharacterNode(DjangoObjectType):
     inventory = graphene.List(Item)
 
-    @graphene.resolve_only_args
-    def resolve_inventory(self):
+    def resolve_inventory(self, info):
         return self.inventory.all()
     
     class Meta:
