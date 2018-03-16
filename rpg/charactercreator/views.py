@@ -8,7 +8,7 @@ from django import template
 
 
 def index(request):
-    return HttpResponse("Character Creator App!")
+    return render(request, 'main/index.html', context)
 
 
 @login_required
