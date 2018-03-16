@@ -16,7 +16,7 @@
 
   <p>Experience: {{ character.exp }}</p>
 
-  <p>Hit Points: {{ character.hp }}</p>
+  <p>Health Points: {{ character.hp }}</p>
 
   <p>Strength: {{ character.strength }}</p>
 
@@ -28,7 +28,12 @@
 
   {% if character.using_shield %} <p>Shield: {{ character.using_shield }}</p> {% endif %}
 
-  <p>Rage: {{ character.rage }}</p>
+  {% if character.rage %} <p>Rage: {{ character.rage }}</p> {% endif %}
+
+  {% if character.has_pet %} <p>Has Pet: {{ character.has_pet }}</p> {% endif %}
+
+
+  {% if character.inventory %} <h2>In the Bag of Holding</h2><br><p>{{ character.has_pet }}</p> {% endif %}
 
   {% endif %}
 </div>
