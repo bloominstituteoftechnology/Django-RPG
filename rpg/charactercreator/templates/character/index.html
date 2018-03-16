@@ -40,7 +40,8 @@
       <i>Infectious Zombie Alert: </i>
     </b>{{ character.can_infect_others }}</p> {% endif %} {% if character.inventory %}
   {% comment %} <h2>In the Bag of Holding</h2>
-  <p>{{ character.inventory.name }}</p> {% endif %} {% endif %} {% endcomment %}
+  <p>{{ character.inventory.name }}</p> {% endif %} {% endcomment %}
+  {% endif %}
 </div>
 
 </html>
