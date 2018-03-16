@@ -140,7 +140,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SITE_ID  = 1
 
 # after login go here, after logout go to the login screen
-LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/charactercreator/characters/"
+LOGIN_REDIRECT_URL = "/charactercreator/characters/"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
 
 AUTHENTICATION_BACKENDS = (
