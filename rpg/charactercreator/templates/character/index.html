@@ -1,8 +1,5 @@
-{% load static %} {% comment %}
-<form>
-  <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
-  />
-</form> {% endcomment %}
+{% load static %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 <html>
 <div class="header">
@@ -54,5 +51,10 @@
   <p>{{ character.inventory.name }}</p> {% endif %} {% endcomment %} 
   {% endif %}
 </div>
-
+<div>
+    <form>
+        <input type="button" value="Logout" onclick="window.location.href='https://django-rpg-app.herokuapp.com/accounts/logout/'"
+        />
+      </form>
+</div>
 </html>
