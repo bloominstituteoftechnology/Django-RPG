@@ -21,8 +21,13 @@ from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(BASE_DIR, 'rgb/charactercreator/static')
-STATIC_URL = '/rgb/charactercreator/static/'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.0/howto/static-files/
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, '/charactercreator/static')
+STATIC_URL = '/charactercreator/static/'
 STATICFILES_DIRS = (
     # os.path.join(BASE_DIR, 'rgb/charactercreator/static'),
 )
@@ -60,8 +65,8 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     # Our apps
-    'armory',
-    'charactercreator',
+    'rpg.armory',
+    'rpg.charactercreator',
 ]
 
 MIDDLEWARE = [
@@ -112,7 +117,7 @@ GRAPHENE = {
 }
 
 
-WSGI_APPLICATION = 'rpg.rpg.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 connection_string = config('DATABASE')
 default_parameters = dj_database_url.parse(connection_string, conn_max_age=600)
 
@@ -173,9 +178,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
 
 SITE_ID = 1

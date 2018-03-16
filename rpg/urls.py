@@ -21,7 +21,7 @@ router.register(r'users', UserViewSet)
 
 
 urlpatterns = [
-    path('charactercreator/', include('charactercreator.urls')),
+    path('charactercreator/', include('rpg.charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
