@@ -21,3 +21,4 @@ class FighterSerializer(serializers.HyperlinkedModelSerializer):
 class FighterViewSet(viewsets.ModelViewSet):
   queryset = Fighter.objects.all()
   serializer_class = FighterSerializer
+  
