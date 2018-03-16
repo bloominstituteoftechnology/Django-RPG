@@ -7,17 +7,12 @@
 </form>
 <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 <html>
+<h1>
+  {{ character.name }}</h1>
 <div class="container">
-  {% if character.fighter %}
-  <img src="{% static 'charactercreator/fighter.png'  %}" alt="fighter image" /> {% endif %}{% if character.mage %}
-  <img src="{% static 'charactercreator/mage.png'  %}" alt="mage image" /> {% endif %}{% if character.thief %}
-  <img src="{% static 'charactercreator/thief.png'  %}" alt="thief image" />{% endif %}{% if character.cleric %}
-  <img src="{% static 'charactercreator/cleric.png'  %}" alt="cleric image" /> {% endif %}
+  <img src="{% static 'charactercreator/{{ charClass }}.png'  %}" alt="fighter image" />
 
 
-
-  <h1>
-    {{ character.name }}</h1>
 
   <p>Class: {{ charClass }}</p>
 
