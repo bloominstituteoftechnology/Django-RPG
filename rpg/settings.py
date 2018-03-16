@@ -103,7 +103,7 @@ GRAPHENE = {
 
 WSGI_APPLICATION = 'rpg.wsgi.application'
 
-LOGIN_REDIRECT_URL = "https://my-rpg-app.herokuapp.com/charactercreator/characters/"
+# LOGIN_REDIRECT_URL = "https://my-rpg-app.herokuapp.com/charactercreator/characters/"
 
 
 # Database
@@ -161,6 +161,6 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SITE_ID = 2
+SITE_ID = 1
 
 print('GOT THIS FAR! In settings.py')
