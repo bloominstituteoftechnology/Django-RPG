@@ -102,3 +102,6 @@ ENV/
 
 # db
 .sqlite3
+
+# test data
+.json
