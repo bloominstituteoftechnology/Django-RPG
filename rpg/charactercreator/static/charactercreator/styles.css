@@ -4,6 +4,10 @@ body {
   background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+h3, h3 a, h1 {
+  color: green;
+}
+
 li a {
   color: green;
   display: block;

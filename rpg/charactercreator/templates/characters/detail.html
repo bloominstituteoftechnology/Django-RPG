@@ -2,11 +2,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 
 <h1>{{ character.name }}</h1>
-<h4>level: {{ character.level }}</h4>
-<h4>experience: {{ character.exp }}</h4>
-<h4>hit points: {{ character.hp }}</h4>
-<h4>strength: {{ character.strength }}</h4>
-<h4>intelligence: {{ character.intelligence }}</h4>
-<h4>dexterity: {{ character.dexterity }}</h4>
-<h4>wisdom: {{ character.wisdom }}</h4>
-<h4><a href="/charactercreator/character/{{ character.character_id }}/items">list of items</a></h4>
+<h3>level: {{ character.level }}</h3>
+<h3>experience: {{ character.exp }}</h3>
+<h3>hit points: {{ character.hp }}</h3>
+<h3>strength: {{ character.strength }}</h3>
+<h3>intelligence: {{ character.intelligence }}</h3>
+<h3>dexterity: {{ character.dexterity }}</h3>
+<h3>wisdom: {{ character.wisdom }}</h3>
+<h3><a href="/charactercreator/character/{{ character.character_id }}/items">list of items</a></h3>
