@@ -5,11 +5,11 @@
 </form> {% endcomment %}
 <link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
 <html>
+<div class="header">
+  <h1>{{ character.name }}</h1>
+</div>
 <div class="container">
   {% if character %}
-  <div class="header">
-    <h1>{{ character.name }}</h1>
-  </div>
 
   <h2>
     <strong>{{ charClass }}</strong>
@@ -38,7 +38,7 @@
   {% if character.mana %}<p>Mana: {{ character.mana }}</p> {% endif %} 
 
   {% if character.is_sneaking %}<p>Sneaky Sneaky: {{ character.is_sneaking }}</p> {% endif %} 
-  
+
   {% if character.can_infect_others %}<p><b><i>Infectious Zombie Alert: </i></b>{{ character.can_infect_others }}</p> {% endif %} 
   
   {% comment %} {% if character.inventory %}
