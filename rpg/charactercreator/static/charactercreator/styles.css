@@ -44,14 +44,14 @@ img {
     float: right;
 }
 
-ul {
+li {
     list-style-type: none; 
     font-size: 15px;
     color: 535460;
     margin: 2px;
 }
 
-ul:hover {
+li:hover {
     background-color: e1e918;
 
 }
