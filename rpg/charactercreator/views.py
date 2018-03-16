@@ -5,14 +5,18 @@ from .models import Character, Fighter, Mage, Cleric, Thief
 from django import template
 
 # everything that follows @login_required will hide the endpoint until a user logs in
+
+
 def index(request):
     return HttpResponse("Character Creator App!")
+
 
 @login_required
 def view_all_characters(request):
     characters = Character.objects.all()
     context = {'characters': characters}
     return render(request, 'characters/index.html', context)
+
 
 @login_required
 def view_character(request, character_id):
@@ -36,10 +40,10 @@ def view_character(request, character_id):
                             charClass = character.walker.__class__.__name__
                         except:
                             try:
-                            charClass = character.runner.__class__.__name__
+                                charClass = character.runner.__class__.__name__
                             except:
                                 try:
-                                charClass = character.berzerker.__class__.__name__
+                                    charClass = character.berzerker.__class__.__name__
                                 except:
                                     pass
     return render(request, 'character/index.html', {'character': character, 'charClass': charClass})
