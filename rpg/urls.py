@@ -21,7 +21,7 @@ from rpg.charactercreator.api import CharacterViewSet
 from rpg.armory.api import ItemViewSet
 from graphene_django.views import GraphQLView
 from django.views.generic.base import TemplateView
-from rpg.views import HomeView
+from . import views
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -42,7 +42,7 @@ router.register(r'items', ItemViewSet)
 
 
 urlpatterns = [
-    path(r'^$', HomeView.as_view(), name='home'),
+    path('', views.index, name='index'),
     path('charactercreator/', include('rpg.charactercreator.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^accounts/', include('allauth.urls')),
