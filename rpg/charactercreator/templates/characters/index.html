@@ -4,10 +4,10 @@
 <div class="header">
     <h1>Choose a Character</h1>
 </div>
+<div>
+    <img src="{% static 'charactercreator/berzerker.jpg'  %}" alt="berzerker image" />
+</div>
 <div class="container">
-    <div>
-        <img src="{% static 'charactercreator/berzerker.jpg'  %}" alt="berzerker image" />
-    </div>
     {% if characters %}
     <ul class="characterList">
         {% for character in characters %}
