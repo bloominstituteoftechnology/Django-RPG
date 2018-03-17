@@ -31,9 +31,7 @@ def view_character(request, character_id):
                     charClass = character.cleric.__class__.__name__
                 except:
                     pass
-    x =
-    y =
-    z =
+
     charImage = 'https://s3.us-east-2.amazonaws.com/djangorpg/'+charClass+'.png'
     context = {'character': character,
                'charClass': charClass, 'charImage': charImage}
