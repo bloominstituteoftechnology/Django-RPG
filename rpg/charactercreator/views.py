@@ -35,7 +35,7 @@ def view_character(request, character_id):
     # y = charClass
     # z = '.png\' %}\"'
     x = '\"https://s3.us-east-2.amazonaws.com/djangorpg/'
-    y = charImage
+    y = charClass
     z = '.png\"'
     charImage = "%s%s%s" % (x, y, z)
     context = {'character': character,
