@@ -31,7 +31,7 @@ def view_character(request, character_id):
                     charClass = character.cleric.__class__.__name__
                 except:
                     pass
-    x = "\"{% static \'charactercreator /"
+    x = "\"{% static \'charactercreator/"
     y = charClass
     z = '.png\' %}\"'
     charImage = "%s%s%s" % (x, y, z)
