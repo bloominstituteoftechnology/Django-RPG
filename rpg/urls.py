@@ -26,5 +26,5 @@ urlpatterns = [
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
     re_path(r'^api-auth/', include('rest_framework.urls')),
-    re_path('', GraphQLView.as_view(graphiql=True), None, 'GraphIQL'),    
+    re_path(r'^$', GraphQLView.as_view(graphiql=True), None, 'GraphIQL'),    
 ]

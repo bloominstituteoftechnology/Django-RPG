@@ -14,7 +14,7 @@
   <h2>Dexterity: <strong>{{ character.dexterity }}</strong></h2>   
   <h2>Wisdom: <strong>{{ character.wisdom }}</strong></h2>    
   <h2>Iventory:</h2>
-  <ul>
+  <!-- <ul>
       {% for item in character.inventory.all %}
          <li>
             <label>item id: <h3>{{ item.item_id }}</h3> </label>
@@ -27,7 +27,7 @@
 
         </li>
       {% endfor %}
-  </ul>  
+  </ul>   -->
   {% for field in ct.fields  %}
     <label>{{field.t}} <h3>{{field.v}}</h3></label>
   {% endfor %}
