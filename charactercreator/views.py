@@ -25,6 +25,8 @@ def view_all_characters(request):
     return render(request, 'characters/index.html', context)
 
 def view_character(request,character_id):
+    request.session.set_test_cookie()
+    request.session.setdefault()
     character = Character.objects.get(pk=character_id)
     ct = getType(character)
     context = {'character': character, 'ct': ct}

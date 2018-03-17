@@ -1,7 +1,7 @@
 from graphene_django import DjangoObjectType
 import graphene
 from .models import Character as CharacterModel
-from rpg.armory.models import  Item as ItemModel, Weapon as WeaponModel
+from armory.models import  Item as ItemModel, Weapon as WeaponModel
 from graphene_django.filter import DjangoFilterConnectionField
 
 

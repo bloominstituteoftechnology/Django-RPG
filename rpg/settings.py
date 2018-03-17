@@ -67,8 +67,8 @@ INSTALLED_APPS = [
     # development tools
     'IPython',
     # Our apps
-    'rpg.armory',
-    'rpg.charactercreator',
+    'armory',
+    'charactercreator',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +80,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+SESSION_ENGINE  =  'django.contrib.sessions.backends.signed_cookies'
+
 
 ROOT_URLCONF = 'rpg.urls'
 
@@ -115,7 +118,7 @@ REST_FRAMEWORK = {
 }
 
 GRAPHENE = {
-    'SCHEMA': 'rpg.charactercreator.schema.schema'
+    'SCHEMA': 'charactercreator.schema.schema'
 }
 
 
