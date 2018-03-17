@@ -31,13 +31,14 @@ def view_character(request, character_id):
                     charClass = character.cleric.__class__.__name__
                 except:
                     pass
-    x = "\"% static \'charactercreator/"
-    y = charClass
-    z = '.png\' %\"'
+    # x = "\"% static \'charactercreator/"
+    # y = charClass
+    # z = '.png\' %\"'
     # x = '\"https://s3.us-east-2.amazonaws.com/djangorpg/'
     # y = charClass
     # z = '.png\"'
-    charImage = "%s%s%s" % (x, y, z)
+    # charImage = "%s%s%s" % (x, y, z)
+    charImage = '"charactercreator/' | add: charClass | add: '.png"'
     context = {'character': character,
                'charClass': charClass, 'charImage': charImage}
     return render(request, 'character/index.html', context)
