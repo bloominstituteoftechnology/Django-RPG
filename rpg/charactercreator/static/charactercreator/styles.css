@@ -62,3 +62,8 @@ a:hover {
     color: e1e918;
 
 }
+
+.button {
+    width: 128px;
+    height: 128px;
+}
