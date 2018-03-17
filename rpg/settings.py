@@ -120,19 +120,22 @@ GRAPHENE = {
 
 
 WSGI_APPLICATION = 'wsgi.application'
-connection_string = config('DATABASE')
-default_parameters = dj_database_url.parse(connection_string, conn_max_age=600)
 
-DATABASES  = {
-    'default': {
-        'ENGINE': default_parameters['ENGINE'],
-        'NAME': default_parameters['NAME'],
-        'USER': default_parameters['USER'],
-        'PASSWORD': default_parameters['PASSWORD'],
-        'HOST': default_parameters['HOST'],
-        'PORT': default_parameters['PORT'],
-    }
-}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+# connection_string = config('DATABASE')
+# default_parameters = dj_database_url.parse(connection_string, conn_max_age=600)
+
+# DATABASES  = {
+#     'default': {
+#         'ENGINE': default_parameters['ENGINE'],
+#         'NAME': default_parameters['NAME'],
+#         'USER': default_parameters['USER'],
+#         'PASSWORD': default_parameters['PASSWORD'],
+#         'HOST': default_parameters['HOST'],
+#         'PORT': default_parameters['PORT'],
+#     }
+# }
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
