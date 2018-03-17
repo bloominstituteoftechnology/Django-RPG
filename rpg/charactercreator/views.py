@@ -38,7 +38,7 @@ def view_character(request, character_id):
     # y = charClass
     # z = '.png\"'
     # charImage = "%s%s%s" % (x, y, z)
-    charImage = '"charactercreator/' | add: charClass | add: '.png"'
+    # charImage = '"charactercreator/' | add: charClass | add: '.png"'
     context = {'character': character,
                'charClass': charClass, 'charImage': charImage}
     return render(request, 'character/index.html', context)
