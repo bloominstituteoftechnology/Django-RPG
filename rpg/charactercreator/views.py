@@ -32,7 +32,7 @@ def view_character(request, character_id):
                 except:
                     pass
 
-    charImage = 'https://s3.us-east-2.amazonaws.com/djangorpg/'+charClass+'.png'
+    charImage = '"https://s3.us-east-2.amazonaws.com/djangorpg/'+charClass+'.png"'
     context = {'character': character,
                'charClass': charClass, 'charImage': charImage}
     return render(request, 'character/index.html', context)
