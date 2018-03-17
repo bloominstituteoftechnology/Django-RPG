@@ -20,5 +20,21 @@
     <p>No characters are available.</p>
     {% endif %}
 </div>
+<div class="buttons">
+    <form>
+        <a href="https://murmuring-reef-49078.herokuapp.com/api">
+            <img class="button" src="{% static 'charactercreator/deadbutton1.jpg'  %}" alt="api" style="width: 5%; height: 10%; display: inline-block; text-align: left;"
+                title="api" />
+        </a>
+        <a href="https://murmuring-reef-49078.herokuapp.com/graphql">
+            <img class="button" src="{% static 'charactercreator/deadbutton3.png'  %}" alt="graphQL" style="width: 5%; height: 10%; display: inline-block; text-align: center;"
+                title="graphQL" />
+        </a>
+        <a href="https://murmuring-reef-49078.herokuapp.com/accounts/logout/">
+            <img class="button" src="{% static 'charactercreator/deadbutton4.gif'  %}" alt="logout" style="width: 5%; height: 10%; display: inline-block; text-align: right;"
+                title="logout" />
+        </a>
+    </form>
+</div>
 
 </html>
