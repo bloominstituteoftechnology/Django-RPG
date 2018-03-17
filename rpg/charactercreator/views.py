@@ -8,14 +8,14 @@ def index(request):
     return HttpResponse("Character Creator App!")
 
 
-@login_required
+@login_required(redirect_field_name='charactercreator/characters/')
 def view_all_characters(request):
     characters = Character.objects.all()
     context = {'characters': characters}
     return render(request, 'characters/index.html', context)
 
 
-@login_required
+@login_required(redirect_field_name='charactercreator/characters/')
 def view_character(request, character_id):
     character = Character.objects.get(pk=character_id)
     try:
