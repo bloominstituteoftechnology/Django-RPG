@@ -159,6 +159,10 @@ INSTALLED_APPS = [
 # environment variables 
 * variable typically as PATH which are varaibles exposed to your OS. Usually used for either creating new environment, keeping secrets safe, deploying websites.
 
+'export ENVIRONMENT_VARIABLE=value' sets the environment variable value
+
+'echo $ENVIRONMENT_VARIABLE' returns the value of the environment variable
+
 # Heroku Install
 
 'brew install heroku/brew/heroku' - installs heroku on mac using brew. 
@@ -172,3 +176,22 @@ INSTALLED_APPS = [
 'git push heroku master' - launches and deloys the app. It also pushes any new changes you made to the app as well
 
 'git push -am "comment"' - commits change you made to files for it to be push up to the master heroku branch
+
+'heroku run python manage.py migrate' stores changes you have made in a migration. It needs to run for new projects and whenever the schema for database updates
+
+'heroku run python manage.py createsuperuser' - creates a super user for the heroky app
+
+'heroku run python manage.py dbshell' - start the postgresql shell
+
+'heroky run pythong manage.py shell' - run the shell
+
+'heroku ps:scale web=0 --app django-stuff' - stops deployment 
+
+'heroku ps:scale web=1 --app django-stuff' - starts deployment back up
+
+'heroku config:set DEBUG=TRUE' - works the admin on and the possible paths
+
+'heroku run python manage.py loaddata rpg/testdata.json'
+
+
+
