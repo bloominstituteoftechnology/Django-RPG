@@ -3,8 +3,8 @@ from .models import Item, Weapon
 # from charactercreator.models import Character
 
 class ItemSerializer(serializers.RelatedField):
-    # def queryset():
-    #     return None
+    def queryset():
+        return None
 
     # def display_value(self, item):
     #     return  "x"  #Item.objects.get(pk=item).name
