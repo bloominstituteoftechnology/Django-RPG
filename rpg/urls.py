@@ -8,19 +8,19 @@ from django.shortcuts import render
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    def to_representation(self, user):
-        return 'url {0} username {1} email {2} is_staff {3}'.format(user.url, user.username, user.email, user.is_staff)
+    # def to_representation(self, user):
+    #     return 'username {0} email {1} is_staff {2}'.format(user.username, user.email, user.is_staff)
 
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'is_staff')
+        fields = ('username', 'email', 'is_staff')
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-def view_user(request, user):
+def view_user(request):
      return render(request, 'user.html', None)
 
 
