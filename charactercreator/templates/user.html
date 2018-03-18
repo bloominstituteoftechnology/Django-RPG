@@ -1,0 +1,7 @@
+{% if user %}
+    <div>username: {{ user.username }}</div>
+    <div>email: {{ user.email }}</div>        
+    <div>Is Staff: {{ user.is_staff }} </div>
+{% else %}
+    <p>No User is available.</p>    
+{% endif %}
