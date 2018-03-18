@@ -6,6 +6,9 @@ from graphene_django.views import GraphQLView
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    def to_representation(self, user):
+        return 'url {0} username {1} email {2} is_staff {3}'.format(user.url, user.username, user.email, user.is_staff)
+
     class Meta:
         model = User
         fields = ('url', 'username', 'email', 'is_staff')
@@ -23,6 +26,7 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     path('charactercreator/', include('charactercreator.urls')),
     path('admin/', admin.site.urls),
+    re_path(r'^accounts/profile/',),
     re_path(r'^accounts/', include('allauth.urls')),
     re_path(r'^api/', include(router.urls)),
     re_path(r'^api-auth/', include('rest_framework.urls')),
