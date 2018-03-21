@@ -1,0 +1,11 @@
+{% if character %}
+<ul>
+    <li>Character Name: {{ character.name }}</li>
+    <li>Character Type: {{ charType.type }}</li>
+    <li>Character Level: {{ character.level }}</li>
+    <li>Character Exp: {{ character.exp }}</li>
+    <li>Character HP: {{ character.hp }}</li>
+</ul>
+{% else %}
+<p>No character not available.</p>
+{% endif %}
