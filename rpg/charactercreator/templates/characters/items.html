@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'charactercreator/styles.css' %}" />
+
+{% if items %}
+<ul>
+    {% for item in items %}
+    <li><a href="/charactercreator/character/item/{{ item.item_id }}">{{ item.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No items are available.</p>
+{% endif %}
