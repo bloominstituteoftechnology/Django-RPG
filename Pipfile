@@ -1,0 +1,16 @@
+[[source]]
+verify_ssl = true
+name = "pypi"
+url = "https://pypi.python.org/simple"
+
+[packages]
+Django = "==2.0.2"
+django-allauth = "==0.35.0"
+djangorestframework = "==3.7.7"
+graphene-django = ">=2.0.dev"
+django-filter = "==2.0.0.dev1"
+
+[dev-packages]
+
+[requires]
+python_version = "3.5"
