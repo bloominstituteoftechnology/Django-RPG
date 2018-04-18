@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     # Our apps
-    'rpg.armory',
-    'rpg.charactercreator',
+    'armory',
+    'charactercreator',
 ]
 
 MIDDLEWARE = [

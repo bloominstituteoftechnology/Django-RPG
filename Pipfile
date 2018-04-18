@@ -9,6 +9,9 @@ django-allauth = "==0.35.0"
 djangorestframework = "==3.7.7"
 graphene-django = ">=2.0.dev"
 django-filter = "==2.0.0.dev1"
+python-decouple = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [dev-packages]
 
