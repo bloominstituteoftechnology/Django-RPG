@@ -1,6 +1,5 @@
 # Django-RPG
 
-
 For this assignment, you'll be exploring some test data in a Django RPG.
 
 In the RPG, install dependencies from the Pipfile using `pipenv`, and set up the database schema using `./manage.py migrate`. At this point the app should work, and you can try a few other `./manage.py` commands to verify this.
