@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Character, Fighter, Mage, Cleric, Thief, Necromancer
 
-# Register your models here.
+admin.site.register((Character, Fighter, Mage, Cleric, Thief, Necromancer))
