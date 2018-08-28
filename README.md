@@ -31,3 +31,6 @@ Stretch goals:
 * [ ] Slice the Items/Weapon distribution by Character subclass
 * [ ] Play with populating your own test data - this data was generated using https://github.com/volrath/django-autofixture (this fork is compatible with Django 2.0 and is installed by the requirements.txt in the testdata branch, but you may still need dependencies such as gdal-bin (search for how to install this for your specific platform))
 * [ ] In general, this exercise is meant to test your ability to navigate and investigate data in a Django application. If you get to the stretch goal of using autofixture, the practical application here is testing - you can have tests that generate unique random data each time, ensuring the robustness of your application.
+
+
+** Initial Commit
