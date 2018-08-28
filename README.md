@@ -8,7 +8,7 @@ using `pipenv install`.
 
 You'll need a `.env` file to run this. The following should work:
 
-```python
+```
 SECRET_KEY='a secret key, see below'
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
