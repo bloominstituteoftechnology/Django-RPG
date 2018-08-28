@@ -5,7 +5,7 @@ from .models import Character, Fighter, Mage, Cleric, Thief
 
 def index(request):
     return HttpResponse("Character Creator App!")
-
+    
 @login_required
 def view_all_characters(request):
     characters = Character.objects.all()

@@ -13,7 +13,14 @@ class Character(models.Model):
     dexterity = models.IntegerField(default=1)
     wisdom = models.IntegerField(default=1)
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
+    
+    def __str__(self):
+        entry = self.name
+        return entry
 
+    class Meta:
+        verbose_name_plural = "All Classes of Characters"
+        
 class Fighter(Character):
     """Martial warrior class good at hitting things."""
     using_shield = models.BooleanField(default=False)
