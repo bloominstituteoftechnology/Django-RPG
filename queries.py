@@ -34,5 +34,7 @@ Average number of items
 from django.db.models import Avg
 
 c = Character.objects.all().aggregate(Avg('inventory'))
-{inventory_avg": 89.17817371937639}
+{inventory_avg: 89.17817371937639}
 
+w = Character.objects.aggregate(Avg('inventory__weapon'))
+{inventory__weapon__avg: 157.0344827586207}
