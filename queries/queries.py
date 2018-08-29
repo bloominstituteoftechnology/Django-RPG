@@ -30,3 +30,12 @@ num_mages = Mage.objects.count()
 num_clerics = Cleric.objects.count()
 num_thieves = Thief.objects.count()
 num_necromancers = Necromancer.objects.count()
+
+
+"""
+How many total items?
+
+count() returns the number of objects matching the QuerySet
+https://docs.djangoproject.com/en/2.1/ref/models/querysets/#count
+"""
+num_items = Item.objects.count()
