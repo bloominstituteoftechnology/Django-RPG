@@ -44,12 +44,12 @@ filter and span relationships (the equivalent of JOIN in SQL).
 
 Your main goal is to write Python code that uses the Django ORM to answer:
 
-* [ ] How many total Characters are there?
-* [ ] How many of each specific subclass?
-* [ ] How many total Items?
-* [ ] How many of the Items are weapons? How many are not?
-* [ ] On average, how many Items does each Character have?
-* [ ] On average, how many Weapons does each character have?
+* [ ] How many total Characters are there? --> 302
+* [ ] How many of each specific subclass? --> Fighter: 68, Mage: 97, Cleric: 75, Thief: 51, Necromancer: 11
+* [ ] How many total Items? --> 174
+* [ ] How many of the Items are weapons? How many are not? --> Weapons: 37, Non-Weapons: 137
+* [ ] On average, how many Items does each Character have? --> 2.9735099337748343
+* [ ] On average, how many Weapons does each character have? --> 0.6721854304
 
 You can experiment/execute your code using the Django shell. Please turn in a
 file `queries.py` in this repo with your code along with comments for your
