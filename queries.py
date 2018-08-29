@@ -1,4 +1,5 @@
 from charactercreator.models import Character, Thief, Fighter, Mage, Necromancer, Cleric
+from django.db.models import Avg, Count
 
 from armory.models import Item, Weapon
 
@@ -45,3 +46,7 @@ def count_weapons():
 def not_weapons():
     not_weapon = count_items() - count_weapons()
     return not_weapon
+
+def average_item():
+    averageItem = Character.objects.annotate(count=Count("inventory")).aggregate(Avg("count"))
+    return averageItem
