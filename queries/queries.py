@@ -1,4 +1,5 @@
 # Querying items with the Django ORM
+from django.db.models import Count, Avg
 from armory.models import Item, Weapon
 from charactercreator.models import (
     Character,
@@ -60,3 +61,22 @@ https://docs.djangoproject.com/en/2.1/ref/models/querysets/#std:fieldlookup-isnu
 """
 num_weapons = Weapon.objects.count()
 num_items_not_weapons = Item.objects.filter(weapon__isnull=True).count()
+
+
+"""
+On average, how many items does each character have?
+
+annotate() aggregates data for each object in a QuerySet
+https://docs.djangoproject.com/en/2.1/ref/models/querysets/#annotate
+https://docs.djangoproject.com/en/2.1/topics/db/aggregation/#s-generating-aggregates-for-each-item-in-a-queryset
+
+aggregate() generates a summaries of values over the entire QuerySet
+https://docs.djangoproject.com/en/2.1/ref/models/querysets/#aggregate
+https://docs.djangoproject.com/en/2.1/topics/db/aggregation/#generating-aggregates-over-a-queryset
+
+Aggregate functions: Avg, Count, Min, Max, Sum
+https://docs.djangoproject.com/en/2.1/ref/models/querysets/#aggregation-functions
+"""
+avg_items_per_character = (Character.objects
+                           .annotate(num_items=Count('inventory'))
+                           .aggregate(Avg('num_items')))
