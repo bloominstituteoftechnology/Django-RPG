@@ -16,6 +16,10 @@ class Character(models.Model):
     wisdom = models.IntegerField(default=1)
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
 
+    def __str__(self):
+        entry = self.name
+        return entry
+
 
 class Fighter(Character):
     """Martial warrior class good at hitting things."""
