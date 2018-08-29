@@ -22,9 +22,6 @@ num_characters = Character.objects.count()
 
 """
 How many of each specific subclass?
-
-count() returns the number of objects matching the QuerySet
-https://docs.djangoproject.com/en/2.1/ref/models/querysets/#count
 """
 num_fighters = Fighter.objects.count()
 num_mages = Mage.objects.count()
@@ -35,18 +32,12 @@ num_necromancers = Necromancer.objects.count()
 
 """
 How many total items?
-
-count() returns the number of objects matching the QuerySet
-https://docs.djangoproject.com/en/2.1/ref/models/querysets/#count
 """
 num_items = Item.objects.count()
 
 
 """
 How many of the items are weapons? How many are not?
-
-count() returns the number of objects matching the QuerySet
-https://docs.djangoproject.com/en/2.1/ref/models/querysets/#count
 
 filter() returns a new set that matches the given paramters
 https://docs.djangoproject.com/en/2.1/ref/models/querysets/#filter
@@ -77,9 +68,13 @@ https://docs.djangoproject.com/en/2.1/topics/db/aggregation/#generating-aggregat
 Aggregate functions: Avg, Count, Min, Max, Sum
 https://docs.djangoproject.com/en/2.1/ref/models/querysets/#aggregation-functions
 """
-avg_items_per_character = (Character.objects
-                           .annotate(num_items=Count('inventory'))
-                           .aggregate(Avg('num_items')))
+avg_items_per_character = (
+    Character.objects
+    .annotate(
+        items=Count('inventory'))
+    .aggregate(
+        Avg('items'))
+)
 
 
 """
@@ -93,6 +88,5 @@ avg_weapons_per_character = (
     .annotate(
         weapons=Count('inventory', filter=Q(inventory__weapon__isnull=False)))
     .aggregate(
-        Avg('weapons')
-    )
+        Avg('weapons'))
 )
