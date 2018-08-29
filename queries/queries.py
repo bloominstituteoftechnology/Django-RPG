@@ -16,4 +16,17 @@ How many total Characters are there?
 count() returns the number of objects matching the QuerySet
 https://docs.djangoproject.com/en/2.1/ref/models/querysets/#count
 """
-numCharacters = Character.objects.count()
+num_characters = Character.objects.count()
+
+
+"""
+How many of each specific subclass?
+
+count() returns the number of objects matching the QuerySet
+https://docs.djangoproject.com/en/2.1/ref/models/querysets/#count
+"""
+num_fighters = Fighter.objects.count()
+num_mages = Mage.objects.count()
+num_clerics = Cleric.objects.count()
+num_thieves = Thief.objects.count()
+num_necromancers = Necromancer.objects.count()
