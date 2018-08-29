@@ -33,8 +33,9 @@
 >>> len(items) - len(weapons)
 137 #number of items that are not weapons
 
->>> len(items) / len(c)
-0.5761589403973509 #average number of items per character
-
->>> len(weapons) / len(c)
-0.12251655629139073 #average number of weapons per character
+>>> from django.db.models import Avg, Count
+>>> averageItemsPerCharacter = Character.objects.annotate(count=Count("inventory")).aggregate(Avg("count"))
+>>> averageItemsPerCharacter
+{'count__avg': 2.9735099337748343} #average number of items per character
+>>> Character.objects.annotate(count=Count("inventory__weapon")).aggregate(Avg("count"))
+{'count__avg': 0.6721854304635762} #average number of weapons per character
