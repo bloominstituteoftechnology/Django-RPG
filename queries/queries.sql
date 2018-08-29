@@ -9,3 +9,6 @@ SELECT COUNT(character_ptr_id) FROM charactercreator_mage;
 SELECT COUNT(character_ptr_id) FROM charactercreator_cleric;
 SELECT COUNT(character_ptr_id) FROM charactercreator_thief;
 SELECT COUNT(mage_ptr_id) FROM charactercreator_necromancer;
+
+-- How many total items?
+SELECT COUNT(item_id) FROM armory_item;
