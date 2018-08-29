@@ -30,6 +30,8 @@ class Mage(Character):
     """Arcane spellcasters with a familiar pet."""
     has_pet = models.BooleanField(default=True)
     mana = models.IntegerField(default=100)
+    class Meta:
+        verbose_name_plural = "magi"
 
 class Cleric(Character):
     """Mystical healers who can use shields."""
@@ -40,6 +42,9 @@ class Thief(Character):
     """Sneaky rogues good at stealth and ranged attacks."""
     is_sneaking = models.BooleanField(default=False)
     energy = models.IntegerField(default=100)
+    class Meta:
+        verbose_name = "thief"
+        verbose_name_plural = "thieves"
 
 class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
