@@ -11,3 +11,4 @@ class CharacterSerializer(serializers.HyperlinkedModelSerializer):
 class CharacterViewSet(viewsets.ModelViewSet):
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
+
