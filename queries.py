@@ -33,8 +33,10 @@ Other - subtract Weapons from Total
 Average number of items
 from django.db.models import Avg
 
-c = Character.objects.all().aggregate(Avg('inventory'))
-{inventory_avg: 89.17817371937639}
+c = Character.objects.all().annotate(count=Count('inventory')).aggregate(Avg('count'))
+print(c)
+{'count__avg': 2.9735099337748343}
 
-w = Character.objects.aggregate(Avg('inventory__weapon'))
-{inventory__weapon__avg: 157.0344827586207}
+w = Character.objects.all().annotate(count=Count('inventory__weapon')).aggregate(Avg('count')
+print(w)
+{'count__avg': 0.6721854304635762}
