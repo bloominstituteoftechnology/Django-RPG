@@ -1,6 +1,7 @@
 # Django-RPG
 
 
+
 For this assignment, you'll be exploring some test data in a Django RPG.
 
 In the RPG, get into your pipenv shell, install dependencies from the Pipfile
