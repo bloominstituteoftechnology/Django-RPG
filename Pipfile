@@ -12,6 +12,7 @@ django-filter = "==2.0.0.dev1"
 python-decouple = "*"
 dj-database-url = "*"
 whitenoise = "*"
+shell = "*"
 
 [dev-packages]
 
