@@ -24,3 +24,17 @@ print(len(all_thieves)) #51
 # get all Necromancers
 all_necromancers = Necromancer.objects.all()
 print(len(all_necromancers)) # 11
+
+
+# import all item models
+from armory.models import Item, Weapon
+
+# get all items
+all_items = Item.objects.all()
+print(len(all_items)) # 174
+
+# get all weapons
+all_weapons = Weapon.objects.all()
+print(len(all_weapons)) # 37
+
+# 137 items are not weapons, however I have no idea how to figure that out with code
