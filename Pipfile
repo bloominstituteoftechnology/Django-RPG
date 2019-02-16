@@ -4,7 +4,7 @@ name = "pypi"
 url = "https://pypi.python.org/simple"
 
 [packages]
-Django = "==2.0.2"
+Django = ">=2.0.10"
 django-allauth = "==0.35.0"
 djangorestframework = "==3.7.7"
 graphene-django = ">=2.0.dev"
