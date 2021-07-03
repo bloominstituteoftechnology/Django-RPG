@@ -14,6 +14,10 @@ class Character(models.Model):
     wisdom = models.IntegerField(default=1)
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
 
+    def __str__(self):
+        entry = self.name
+        return entry
+
 class Fighter(Character):
     """Martial warrior class good at hitting things."""
     using_shield = models.BooleanField(default=False)
@@ -33,6 +37,9 @@ class Thief(Character):
     """Sneaky rogues good at stealth and ranged attacks."""
     is_sneaking = models.BooleanField(default=False)
     energy = models.IntegerField(default=100)
+
+    class Meta:
+        verbose_name_plural = "thieves"
 
 class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
