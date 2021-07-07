@@ -13,7 +13,14 @@ class Character(models.Model):
     dexterity = models.IntegerField(default=1)
     wisdom = models.IntegerField(default=1)
     inventory = models.ManyToManyField(Item, verbose_name="Items the character has")
+    
+    def __str__(self):
+        entry = self.name
+        return entry
 
+    class Meta:
+        verbose_name_plural = "All Classes of Characters"
+        
 class Fighter(Character):
     """Martial warrior class good at hitting things."""
     using_shield = models.BooleanField(default=False)
@@ -23,6 +30,8 @@ class Mage(Character):
     """Arcane spellcasters with a familiar pet."""
     has_pet = models.BooleanField(default=True)
     mana = models.IntegerField(default=100)
+    class Meta:
+        verbose_name_plural = "magi"
 
 class Cleric(Character):
     """Mystical healers who can use shields."""
@@ -33,6 +42,9 @@ class Thief(Character):
     """Sneaky rogues good at stealth and ranged attacks."""
     is_sneaking = models.BooleanField(default=False)
     energy = models.IntegerField(default=100)
+    class Meta:
+        verbose_name = "thief"
+        verbose_name_plural = "thieves"
 
 class Necromancer(Mage):
     """Spellcaster specialized in the arts of the undead."""
